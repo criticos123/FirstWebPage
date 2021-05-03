@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar';
 import styled from "styled-components";
 
-class App extends Component {
+
+class NavBar extends Component {
   render() {
     return (
       <Container>
-       <NavBar/>
+          <Logo>Meldev</Logo>
       </Container>
     );
   }
@@ -14,10 +14,14 @@ class App extends Component {
 
 const Container= styled.div`
 
-    display:flex;
-    align-items:center;
-    height:100%;
-
+    height:25%;
 `;
 
-export default App;
+const Logo= styled.h1`
+
+    Font-size:50px;
+    color:#008B8B
+  
+`;
+
+export default NavBar;
