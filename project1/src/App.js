@@ -13,14 +13,16 @@ class App extends Component {
       <div>
         <Router>
           <Container>
+          <Homelink to="/">
           <Logo>Meldev</Logo>
+          </Homelink>
             <Bar>
             <Aboutlink to="/About">About</Aboutlink>
             <Rentlink to="/Rent" >For Rent</Rentlink>
             <Contactlink to="/Contact">Contact Us</Contactlink>
             </Bar>
           </Container>
-          <Route path="/Home">
+          <Route path="/">
             <Home/>
           </Route>
           <Route path="/About">
@@ -49,11 +51,17 @@ const Container= styled.div`
 
 `;
 
+const Homelink=styled(NavLink)`
+
+    text-decoration:none;
+`;
+
 const Logo= styled.h1`
 
     Font-size:50px;
     color:#008B8B;
     margin-left:10px;
+    text-decoration:noe;
   
 `;
 
