@@ -10,7 +10,7 @@ import { BrowserRouter as Router,Route,NavLink} from "react-router-dom";
 class App extends Component {
   render() {
     return (
-      <div>
+      <Wrapper>
         <Router>
           <Container>
           <Homelink to="/">
@@ -35,7 +35,7 @@ class App extends Component {
             <Contact/>
           </Route>
         </Router>
-      </div>
+      </Wrapper>
     );
   }
 }
@@ -47,7 +47,14 @@ const Container= styled.div`
     display:flex;
     justify-content:end;
     width:100%;
-    border-bottom:4px solid #008B8B; 
+    border-bottom:4px solid #2F4F4F; 
+    background-color: #fff;
+`;
+
+const Wrapper= styled.body`
+
+  background-color: #008B8B;
+  margin:auto;
 
 `;
 
