@@ -12,16 +12,16 @@ class App extends Component {
     return (
       <Wrapper>
         <Router>
-          <Container>
+          <Navbar>
           <Homelink to="/">
           <Logo>Meldev</Logo>
           </Homelink>
-            <Bar>
+            <Rightbar>
             <Aboutlink to="/About">About</Aboutlink>
             <Rentlink to="/Rent" >For Rent</Rentlink>
             <Contactlink to="/Contact">Contact Us</Contactlink>
-            </Bar>
-          </Container>
+            </Rightbar>
+        </Navbar>
           <Route path="/">
             <Home/>
           </Route>
@@ -42,37 +42,42 @@ class App extends Component {
 
 export default App;
 
-const Container= styled.div`
+
+const Wrapper= styled.body`
+
+  background:
+  linear-gradient(lightblue, transparent),
+  linear-gradient(to top , #6495ED, transparent);
+  background-blend-mode: screen;
+  margin:auto;
+
+`;
+
+const Navbar= styled.div`
 
     display:flex;
     justify-content:end;
     width:100%;
-    border-bottom:4px solid #2F4F4F; 
+    border-bottom:4px solid #6495ED; 
     background-color: #fff;
-`;
-
-const Wrapper= styled.body`
-
-  background-color: #008B8B;
-  margin:auto;
-
+    
 `;
 
 const Homelink=styled(NavLink)`
 
     text-decoration:none;
+    color:#6495ED;
 `;
 
 const Logo= styled.h1`
 
     Font-size:50px;
-    color:#008B8B;
     margin-left:10px;
     text-decoration:noe;
   
 `;
 
-const Bar= styled.div`
+const Rightbar= styled.div`
 
     text-align:center;
     display:flex;
@@ -85,20 +90,21 @@ const Bar= styled.div`
 
  const Aboutlink=styled(NavLink)`
     
-    color:#008B8B;
+
     Font-size:30px;
     margin-right:20px;
+    color:#6495ED;
  `;
 
  const Rentlink=styled(NavLink)`
     
-    color:#008B8B;
     Font-size:30px;
     margin-right:20px;
+    color:#6495ED;
 `;
 
 const Contactlink=styled(NavLink)`
     
-    color:#008B8B;
     Font-size:30px;
+    color:#6495ED;
 `;

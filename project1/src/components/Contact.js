@@ -23,7 +23,8 @@ const Container= styled.div`
     flex-direction:column;
     height:100%;
     align-items:center;
-    border: 2px solid #2F4F4F;
+    border: 2px solid #6495ED;
+    border-top:none;
     margin-left:20%;
     max-width:50%;
     background-color: #fff;
@@ -36,6 +37,7 @@ const Text= styled.p`
 const Heading= styled.h3`
 
     margin-left:10px;
+    text-align:left;
 
 `;
 
@@ -58,8 +60,13 @@ const Button= styled.button`
         text-decoration: none;
         outline: none;
         color: #fff;
-        background-color: #2F4F4F;
+        background-color: #6495ED;
         border: none;
         border-radius: 15px;
+
+        &: active {
+            background-color: #dcdcdc;
+            transform: translateY(4px);
+          }
 `;
 export default Contact;
