@@ -1,16 +1,18 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
+import styled from "styled-components";
 
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
+import Button from '../../public/node_modules/@material-ui/core/Button';
+import Card from '../../public/node_modules/@material-ui/core/Card';
+import CardActions from '../../public/node_modules/@material-ui/core/CardActions';
+import CardContent from '../../public/node_modules/@material-ui/core/CardContent';
+import CardMedia from '../../public/node_modules/@material-ui/core/CardMedia';
+import CssBaseline from '../../public/node_modules/@material-ui/core/CssBaseline';
+import Grid from '../../public/node_modules/@material-ui/core/Grid';
+import Typography from '../../public/node_modules/@material-ui/core/Typography';
+import { makeStyles } from '../../public/node_modules/@material-ui/core/styles';
+import Container from '../../public/node_modules/@material-ui/core/Container';
+
+import Sidebar from './Sidebar';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -49,26 +51,14 @@ export default function Rentals() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <main>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Browse our list of available Apartments
-            </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Filters
-                  </Button>
-                </Grid>
-              </Grid>
-            </div>
-          </Container>
-        </div>
+      <Main>
+      <Sidecontainer>
+      <Sidebar/>
+      </Sidecontainer>
         <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
+        <Typography variant="h5" align="center" color="textSecondary" paragraph>
+              Browse our list of available Apartments
+        </Typography>
           <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
@@ -96,7 +86,26 @@ export default function Rentals() {
             ))}
           </Grid>
         </Container>
-      </main>
+      </Main>
     </React.Fragment>
   );
 }
+
+const Main= styled.main`
+
+  display:flex;
+  flex-direction:row;
+
+`;
+
+const Sidecontainer= styled.main`
+
+  display:flex;
+  flex-direction:row;
+  border: 0.2px solid #008ae6;
+  border-top:none;
+  width:10vw;
+  justify-content:center;
+  background-color:#FFF;
+
+`;

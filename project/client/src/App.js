@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
+import { BrowserRouter as Router,Route} from "react-router-dom";
+
 import Home from './components/Home';
 import About from './components/Rentals';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router,Route} from "react-router-dom";
+import Item from './components/Item';
+
 
 
 class App extends Component {
@@ -21,6 +24,9 @@ class App extends Component {
           </Route>
           <Route path="/Contact">
             <Contact/>
+          </Route>
+          <Route path="/Item">
+            <Item/>
           </Route>
         </Router>
       </Wrapper>

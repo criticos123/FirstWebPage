@@ -1,10 +1,13 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
 import {Link} from "react-router-dom";
+
+
+import AppBar from '../../public/node_modules/@material-ui/core/AppBar';
+import CssBaseline from '../../public/node_modules/@material-ui/core/CssBaseline';
+import Toolbar from '../../public/node_modules/@material-ui/core/Toolbar';
+import Typography from '../../public/node_modules/@material-ui/core/Typography';
+import { makeStyles } from '../../public/node_modules/@material-ui/core/styles';
+
 
 
 const useStyles = makeStyles((theme) => ({
