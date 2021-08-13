@@ -8,7 +8,7 @@ require("dotenv").config();
 const UsersSchema = require("./schemas/users");
 const RentalSchema = require("./schemas/rental");
 
-const PROJECT_NAME = "Keystone";
+const PROJECT_NAME = "Meldev_Keystone";
 const DB_URL = process.env.MONGODB_URI;
 const adapterConfig = {
   mongoUri: DB_URL,
