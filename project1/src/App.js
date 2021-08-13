@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
-import { BrowserRouter as Router,Route} from "react-router-dom";
-
 import Home from './components/Home';
 import About from './components/Rentals';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
-import Item from './components/Item';
-
+import Item from './components/Item'
+import { BrowserRouter as Router,Route} from "react-router-dom";
 
 
 class App extends Component {
