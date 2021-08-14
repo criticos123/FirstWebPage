@@ -1,4 +1,5 @@
-const { Integer, Text } = require("@keystonejs/fields");
+
+const {Integer, Text } = require("@keystonejs/fields");
 
 module.exports = {
   fields: {
@@ -6,7 +7,20 @@ module.exports = {
       type: Text,
       isRequired: true,
     },
-    image: {
+      
+    imageFront: {
+      type: Text,
+      isRequired: true,
+    },
+    imageKitchen: {
+      type: Text,
+      isRequired: true,
+    },
+    imageBedroom: {
+      type: Text,
+      isRequired: true,
+    },
+    imageBathroom: {
       type: Text,
       isRequired: true,
     },
