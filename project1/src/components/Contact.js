@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import emailjs from 'emailjs-com';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -29,6 +30,17 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+function sendEmail(e) {
+  e.preventDefault();
+
+  emailjs.sendForm('service_mn0w9sq', 'template_vvl3zra', e.target, 'user_TWAfyd56g18yKYV7rfwRH')
+    .then((result) => {
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
+}
+
 export default function Contact() {
   const classes = useStyles();
 
@@ -39,29 +51,18 @@ export default function Contact() {
         <h2 className={classes.title}>
           Contact Us
         </h2>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={sendEmail}>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} >
               <TextField
                 autoComplete="fname"
-                name="firstName"
+                name="from_name"
                 variant="outlined"
                 required
+                Send
                 fullWidth
-                id="firstName"
-                label="First Name"
+                label="Name"
                 autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="lname"
               />
             </Grid>
             <Grid item xs={12}>
@@ -71,7 +72,7 @@ export default function Contact() {
                 fullWidth
                 id="email"
                 label="Email Address"
-                name="email"
+                name="from_email"
                 autoComplete="email"
               />
             </Grid>
@@ -80,8 +81,7 @@ export default function Contact() {
                 variant="outlined"
                 required
                 fullWidth
-                name="question"
-                id="question"
+                name="message"
                 multiline="true"
                 rows="5"
               />
