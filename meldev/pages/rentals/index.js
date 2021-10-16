@@ -11,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "next/link";
 
+import Seo from "../../components/Seo";
 import { getRentals } from "../../api/rentals/rentals.queries";
 
 import apartmentexample1 from "../../assets/apartmentexample1.jpeg";
@@ -78,7 +79,7 @@ export default function Rentals() {
   }, []);
 
   return (
-    <React.Fragment>
+    <Seo title="Rentals" description="Apartment listings">
       <CssBaseline />
       <main>
         <Container className={classes.cardGrid} maxWidth="md">
@@ -131,6 +132,6 @@ export default function Rentals() {
           </Grid>
         </Container>
       </main>
-    </React.Fragment>
+    </Seo>
   );
 }

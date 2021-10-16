@@ -6,6 +6,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+
+import Seo from "../../../components/Seo";
 import { getRentalItem } from "../../../api/rentals/rentals.queries";
 
 import apartmentexample2 from "../../../assets/apartmentexample2.jpeg";
@@ -81,49 +83,51 @@ export default function MediaControlCard() {
   console.log({ rentalItem });
 
   return (
-    <div className={classes.wrapper}>
-      <Card>
-        <div className={classes.details}>
-          <div className={classes.imgcontainer}>
-            <div className={classes.overlay}>
-              <img
-                className={classes.frontdoor}
-                src={imageFront}
-                alt="FrontDoor"
-              />
-              <div clasName={classes.sideimg}>
+    <Seo title="Apartment" description="Apartment listing">
+      <div className={classes.wrapper}>
+        <Card>
+          <div className={classes.details}>
+            <div className={classes.imgcontainer}>
+              <div className={classes.overlay}>
                 <img
-                  className={classes.bottomimgs}
-                  src={imageBathroom}
-                  alt="bathroom"
+                  className={classes.frontdoor}
+                  src={imageFront}
+                  alt="FrontDoor"
                 />
-                <img
-                  className={classes.bottomimgs}
-                  src={imageLivingroom}
-                  alt="livingroom"
-                />
-                <img
-                  className={classes.bottomimgs}
-                  src={imageKitchen}
-                  alt="kitchen"
-                />
-                <img
-                  className={classes.bottomimgs}
-                  src={imageBedroom}
-                  alt="bedroom"
-                />
+                <div clasName={classes.sideimg}>
+                  <img
+                    className={classes.bottomimgs}
+                    src={imageBathroom}
+                    alt="bathroom"
+                  />
+                  <img
+                    className={classes.bottomimgs}
+                    src={imageLivingroom}
+                    alt="livingroom"
+                  />
+                  <img
+                    className={classes.bottomimgs}
+                    src={imageKitchen}
+                    alt="kitchen"
+                  />
+                  <img
+                    className={classes.bottomimgs}
+                    src={imageBedroom}
+                    alt="bedroom"
+                  />
+                </div>
               </div>
             </div>
+            <CardContent className={classes.txtbox}>
+              <Typography variant="p">
+                {apartmentName}
+                {streetAddress}
+                {price}
+              </Typography>
+            </CardContent>
           </div>
-          <CardContent className={classes.txtbox}>
-            <Typography variant="p">
-              {apartmentName}
-              {streetAddress}
-              {price}
-            </Typography>
-          </CardContent>
-        </div>
-      </Card>
-    </div>
+        </Card>
+      </div>
+    </Seo>
   );
 }

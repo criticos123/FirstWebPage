@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -11,6 +10,8 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+
+import Seo from "../components/Seo";
 
 import apartmentexample5 from "../assets/apartmentexample5.jpg";
 
@@ -63,7 +64,7 @@ export default function Home() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <Seo title="Home" description="Meldev Apartments at great prices!">
       <CssBaseline />
       <Container maxWidth="lg">
         <main className={classes.bigbody}>
@@ -88,6 +89,6 @@ export default function Home() {
           </Grid>
         </main>
       </Container>
-    </React.Fragment>
+    </Seo>
   );
 }

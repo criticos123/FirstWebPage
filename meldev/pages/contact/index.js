@@ -7,6 +7,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import emailjs from "emailjs-com";
 
+import Seo from "../../components/Seo";
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -53,57 +55,59 @@ export default function Contact() {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <h2 className={classes.title}>Contact Us</h2>
-        <form className={classes.form} onSubmit={sendEmail}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField
-                autoComplete="fname"
-                name="from_name"
-                variant="outlined"
-                required
-                Send
-                fullWidth
-                label="Name"
-                autoFocus
-              />
+    <Seo title="Contact" description="Get in touch!">
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <h2 className={classes.title}>Contact Us</h2>
+          <form className={classes.form} onSubmit={sendEmail}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="fname"
+                  name="from_name"
+                  variant="outlined"
+                  required
+                  Send
+                  fullWidth
+                  label="Name"
+                  autoFocus
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="from_email"
+                  autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="message"
+                  multiline="true"
+                  rows="5"
+                />
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="from_email"
-                autoComplete="email"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="message"
-                multiline="true"
-                rows="5"
-              />
-            </Grid>
-          </Grid>
-          <Button
-            type="submit"
-            variant="contained"
-            fullWidth
-            color="primary"
-            className={classes.submit}
-          >
-            Send
-          </Button>
-        </form>
-      </div>
-    </Container>
+            <Button
+              type="submit"
+              variant="contained"
+              fullWidth
+              color="primary"
+              className={classes.submit}
+            >
+              Send
+            </Button>
+          </form>
+        </div>
+      </Container>
+    </Seo>
   );
 }
