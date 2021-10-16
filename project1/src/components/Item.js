@@ -9,22 +9,26 @@ import Typography from '@material-ui/core/Typography';
 import apartmentexample2 from '../assets/apartmentexample2.jpeg';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-   
-    maxWidth:"60%",
-    margin:"20%",
-  },
-  details: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems:'center',
+
+  wrapper:{
+
+    margin:'100px',
+    display:'flex',
+    alignItems:"center",
     justifyContent:'center',
-
+ 
 
   },
-  content: {
-    flex: '1 0 auto',
+
+  details: {
+
+    display: 'flex',
+    padding:'20px',
+
   },
+  
+
+
 }));
 
 let content = [{aptNumber: 'One Bedroom', coverImg: apartmentexample2,strtAddress:'Pine',price:'$3000/month'}];
@@ -34,16 +38,28 @@ export default function MediaControlCard() {
 
 
   return (
-    <Card className={classes.root}>
+    <div className={classes.wrapper}>
+    <Card>
       <div className={classes.details}>
-        <CardContent className={classes.content}>
-            {content.map((posts)=>(
-                <Typography variant="h2">
-                    {posts.aptNumber}
-                </Typography>
-            ))}
-        </CardContent>
+      <div className={classes.imgcontainer}>
+        {content.map((posts)=>(
+          <div>
+          <img src={posts.coverImg} alt="mainImg"/>
+            </div>
+          
+        ))}
+      </div>
+      <CardContent className={classes.txtbox}>
+        {content.map((posts)=>(
+          <Typography variant="p">
+            {posts.aptNumber}
+            {posts.strtAddress}
+            {posts.price}
+          </Typography>
+        ))}
+      </CardContent>
       </div>
     </Card>
+    </div>
   );
 }
