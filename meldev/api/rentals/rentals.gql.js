@@ -18,6 +18,7 @@ export const RENTALS = {
         price
         apartmentName
         imageFront
+        video
         imageKitchen
         imageBedroom
         imageBathroom

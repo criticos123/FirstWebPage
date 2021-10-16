@@ -14,11 +14,7 @@ import Link from "next/link";
 import Seo from "../../components/Seo";
 import { getRentals } from "../../api/rentals/rentals.queries";
 
-import apartmentexample1 from "../../assets/apartmentexample1.jpeg";
-import apartmentexample2 from "../../assets/apartmentexample2.jpeg";
-import apartmentexample3 from "../../assets/apartmentexample3.jpeg";
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   icon: {
     marginRight: theme.spacing(2),
   },
@@ -49,26 +45,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-let one = {
-  aptNumber: "One Bedroom",
-  coverImg: apartmentexample1,
-  strtAddress: "Pine",
-  price: "$3000/month",
-};
-let two = {
-  aptNumber: "Two Bedroom",
-  coverImg: apartmentexample2,
-  strtAddress: "De Roche",
-  price: "$3000/month",
-};
-let three = {
-  aptNumber: "Three Bedroom",
-  coverImg: apartmentexample3,
-  strtAddress: "Aylmer",
-  price: "$3000/month",
-};
-
-const cards = [one, two, three];
 
 export default function Rentals() {
   const classes = useStyles();

@@ -36,6 +36,10 @@ module.exports = {
       type: Integer,
       isRequired: true,
     },
+    video: {
+      type: Text,
+      isRequired: true,
+    },
   },
   labelField: "apartmentName",
 };
