@@ -6,10 +6,24 @@ export const RENTALS = {
       allRentals {
         price
         apartmentName
-        image
-        imageAltText
+        imageFront
+        streetAddress
+        id
+      }
+    }
+  `,
+  ITEM: gql`
+    query Rental($id: ID!) {
+      Rental(where: { id: $id}) {
+        price
+        apartmentName
+        imageFront
+        imageKitchen
+        imageBedroom
+        imageBathroom
+        imageLivingroom
         streetAddress
       }
     }
-  `
+`
 };

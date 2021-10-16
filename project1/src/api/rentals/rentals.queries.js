@@ -10,3 +10,15 @@ export async function getRentals() {
 
   return allRentals;
 }
+
+export async function getRentalItem(variables) {
+  const {
+    data: { Rental }
+  } = await query({
+    query: RENTALS.ITEM,
+    variables
+  });
+
+  return Rental;
+}
+

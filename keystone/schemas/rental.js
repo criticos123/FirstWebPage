@@ -24,7 +24,7 @@ module.exports = {
       type: Text,
       isRequired: true,
     },
-    imageAltText: {
+    imageLivingroom: {
       type: Text,
       isRequired: true,
     },

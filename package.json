@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "react:dev": "yarn --cwd project1 start",
-    "keystone:dev": "yarn --cwd keystone dev",
+    "keystone:dev": " PORT=3001 yarn --cwd keystone dev",
     "dev": "npm-run-all --parallel react:dev keystone:dev"
   },
   "dependencies": {

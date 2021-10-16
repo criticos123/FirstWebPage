@@ -9,6 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import {Link} from "react-router-dom";
 
 import { getRentals } from "../api/rentals/rentals.queries";
 
@@ -84,14 +85,14 @@ export default function Rentals() {
           <Grid container spacing={4}>
             {rentals.map(
               (
-                { price, apartmentName, image, imageAltText, streetAddress },
+                { price, apartmentName, imageFront, imageAltText, streetAddress,id },
                 index
               ) => (
                 <Grid item key={`rental-${index}`} xs={12} sm={6} md={4}>
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
-                      image={image}
+                      image={imageFront}
                       alt={imageAltText}
                       title="Image title"
                     />
@@ -108,9 +109,11 @@ export default function Rentals() {
                       </Typography>
                     </CardContent>
                     <CardActions>
+                      <Link to={`/Item/${id}`}>
                       <Button size="small" color="primary">
                         View
                       </Button>
+                      </Link>
                     </CardActions>
                   </Card>
                 </Grid>

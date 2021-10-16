@@ -23,7 +23,7 @@ class App extends Component {
           <Route path="/Contact">
             <Contact/>
           </Route>
-          <Route path="/Item">
+          <Route path="/Item/:id">
             <Item/>
           </Route>
         </Router>
