@@ -9,62 +9,63 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import {Link} from "react-router-dom";
+import Link from "next/link";
 
-import { getRentals } from "../api/rentals/rentals.queries";
+import Seo from "../../components/Seo";
+import { getRentals } from "../../api/rentals/rentals.queries";
 
-import apartmentexample1 from "../assets/apartmentexample1.jpeg";
-import apartmentexample2 from "../assets/apartmentexample2.jpeg";
-import apartmentexample3 from "../assets/apartmentexample3.jpeg";
+import apartmentexample1 from "../../assets/apartmentexample1.jpeg";
+import apartmentexample2 from "../../assets/apartmentexample2.jpeg";
+import apartmentexample3 from "../../assets/apartmentexample3.jpeg";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   icon: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6)
+    padding: theme.spacing(8, 0, 6),
   },
   heroButtons: {
-    marginTop: theme.spacing(4)
+    marginTop: theme.spacing(4),
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8)
+    paddingBottom: theme.spacing(8),
   },
   card: {
     height: "100%",
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
   },
   cardMedia: {
-    paddingTop: "56.25%" // 16:9
+    paddingTop: "56.25%", // 16:9
   },
   cardContent: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   bold: {
-    fontWeight: "bold"
-  }
+    fontWeight: "bold",
+  },
 }));
 
 let one = {
   aptNumber: "One Bedroom",
   coverImg: apartmentexample1,
   strtAddress: "Pine",
-  price: "$3000/month"
+  price: "$3000/month",
 };
 let two = {
   aptNumber: "Two Bedroom",
   coverImg: apartmentexample2,
   strtAddress: "De Roche",
-  price: "$3000/month"
+  price: "$3000/month",
 };
 let three = {
   aptNumber: "Three Bedroom",
   coverImg: apartmentexample3,
   strtAddress: "Aylmer",
-  price: "$3000/month"
+  price: "$3000/month",
 };
 
 const cards = [one, two, three];
@@ -78,14 +79,21 @@ export default function Rentals() {
   }, []);
 
   return (
-    <React.Fragment>
+    <Seo title="Rentals" description="Apartment listings">
       <CssBaseline />
       <main>
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>
             {rentals.map(
               (
-                { price, apartmentName, imageFront, imageAltText, streetAddress,id },
+                {
+                  price,
+                  apartmentName,
+                  imageFront,
+                  imageAltText,
+                  streetAddress,
+                  id,
+                },
                 index
               ) => (
                 <Grid item key={`rental-${index}`} xs={12} sm={6} md={4}>
@@ -109,10 +117,12 @@ export default function Rentals() {
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <Link to={`/Item/${id}`}>
-                      <Button size="small" color="primary">
-                        View
-                      </Button>
+                      <Link href={`/rentals/${id}`}>
+                        <a>
+                          <Button size="small" color="primary">
+                            View
+                          </Button>
+                        </a>
                       </Link>
                     </CardActions>
                   </Card>
@@ -122,6 +132,6 @@ export default function Rentals() {
           </Grid>
         </Container>
       </main>
-    </React.Fragment>
+    </Seo>
   );
 }
