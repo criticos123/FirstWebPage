@@ -1,8 +1,11 @@
 import { useEffect } from "react";
+import { ThemeProvider } from "@material-ui/core";
 import styled from "styled-components";
 
+import theme from "../styles/theme";
 import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 function Meldev({ Component, pageProps }) {
   useEffect(() => {
@@ -14,10 +17,13 @@ function Meldev({ Component, pageProps }) {
   }, []);
 
   return (
-    <Wrapper>
-      <Navbar />
-      <Component {...pageProps} />
-    </Wrapper>
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        <Navbar />
+        <CssBaseline />
+        <Component {...pageProps} />
+      </Wrapper>
+    </ThemeProvider>
   );
 }
 

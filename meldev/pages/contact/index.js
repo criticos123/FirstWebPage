@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -57,7 +56,6 @@ export default function Contact() {
   return (
     <Seo title="Contact" description="Get in touch!">
       <Container component="main" maxWidth="xs">
-        <CssBaseline />
         <div className={classes.paper}>
           <h2 className={classes.title}>Contact Us</h2>
           <form className={classes.form} onSubmit={sendEmail}>
