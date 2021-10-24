@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import { ThemeProvider } from "@mui/material/styles";
 import styled from "styled-components";
 
+import theme from "../styles/theme";
 import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -15,13 +17,13 @@ function Meldev({ Component, pageProps }) {
   }, []);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Wrapper>
         <Navbar />
         <CssBaseline />
         <Component {...pageProps} />
       </Wrapper>
-    </>
+    </ThemeProvider>
   );
 }
 
