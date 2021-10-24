@@ -4,7 +4,6 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
@@ -14,7 +13,7 @@ import Link from "next/link";
 import Seo from "../../components/Seo";
 import { getRentals } from "../../api/rentals/rentals.queries";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
   },
@@ -45,7 +44,6 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
 export default function Rentals() {
   const classes = useStyles();
   const [rentals, setRentals] = useState([]);
@@ -56,7 +54,6 @@ export default function Rentals() {
 
   return (
     <Seo title="Rentals" description="Apartment listings">
-      <CssBaseline />
       <main>
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>

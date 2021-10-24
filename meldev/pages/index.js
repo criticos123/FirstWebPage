@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
+
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import MainFeaturedPost from "../components/MainFeaturedPost";
@@ -65,20 +65,19 @@ export default function Home() {
 
   return (
     <Seo title="Home" description="Meldev Apartments at great prices!">
-      <CssBaseline />
       <Container maxWidth="lg">
         <main className={classes.bigbody}>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
-            {cards.map((post) => (
-              <Card className={classes.root}>
+            {cards.map((post, index) => (
+              <Card key={`home-card-${index}`} className={classes.root}>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                     {post.title}
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button className={classes.buttonStyle} color="primary">
+                  <Button variant="contained" color="primary">
                     <Link href={`/${post.buttonLink}`}>
                       <a className={classes.link}>{post.buttonLink}</a>
                     </Link>

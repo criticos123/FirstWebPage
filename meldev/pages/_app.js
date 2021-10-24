@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 function Meldev({ Component, pageProps }) {
   useEffect(() => {
@@ -14,10 +15,13 @@ function Meldev({ Component, pageProps }) {
   }, []);
 
   return (
-    <Wrapper>
-      <Navbar />
-      <Component {...pageProps} />
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Navbar />
+        <CssBaseline />
+        <Component {...pageProps} />
+      </Wrapper>
+    </>
   );
 }
 
