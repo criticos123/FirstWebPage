@@ -1,5 +1,4 @@
-import { createTheme } from "@mui/material/styles";
-import { purple } from "@mui/material/colors";
+import { createTheme } from "@material-ui/core";
 
 const theme = createTheme({
   palette: {
@@ -7,7 +6,7 @@ const theme = createTheme({
       main: "#4169E1",
     },
     secondary: {
-      main: purple[500],
+      main: "#A32CC4",
     },
   },
 });

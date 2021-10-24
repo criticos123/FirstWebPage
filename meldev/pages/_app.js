@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@material-ui/core";
 import styled from "styled-components";
 
 import theme from "../styles/theme";
