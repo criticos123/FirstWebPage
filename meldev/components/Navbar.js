@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -13,14 +13,18 @@ const useStyles = makeStyles((theme) => ({
       listStyle: "none",
     },
   },
+
   appBar: {
+    borderTop: `2px solid #008ae6`,
     borderBottom: `2px solid #008ae6`,
     height: "100px;",
-    padding: theme.spacing(2, 4),
+    padding: theme.spacing(2,2),
   },
+
   toolbar: {
     flexWrap: "wrap",
   },
+
   toolbarTitle: {
     flexGrow: 1,
     fontSize: "60px",
@@ -29,12 +33,20 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Arial, sans-serif",
     fontWeight: "bold",
   },
+  
   link: {
     margin: theme.spacing(1, 1.5),
     color: " #008ae6",
     textDecoration: "none",
     fontSize: "23px",
+
+    '&:hover': {
+      color: "lightgrey",
+      textDecoration:"underline",
+      cursor: "pointer",
+   },
   },
+
 }));
 
 export default function Navbar() {
@@ -49,13 +61,6 @@ export default function Navbar() {
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
-          <Link href="/">
-            <a className={classes.toolbarTitle}>
-              <Typography variant="h1" noWrap className={classes.toolbarTitle}>
-                Meldev
-              </Typography>
-            </a>
-          </Link>
           <nav>
             <Link href="/rentals">
               <a className={classes.link}>Rentals</a>
@@ -69,3 +74,6 @@ export default function Navbar() {
     </React.Fragment>
   );
 }
+
+
+

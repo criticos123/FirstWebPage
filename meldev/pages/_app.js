@@ -3,8 +3,9 @@ import { ThemeProvider } from "@material-ui/core";
 import styled from "styled-components";
 
 import theme from "../styles/theme";
-import Layout from "../components/Layout";
+
 import Navbar from "../components/Navbar";
+import Title from "../components/Title";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 function Meldev({ Component, pageProps }) {
@@ -19,6 +20,7 @@ function Meldev({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
+        <Title/>
         <Navbar />
         <CssBaseline />
         <Component {...pageProps} />
