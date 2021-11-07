@@ -1,1 +1,1 @@
-web: npm keystone:start
+web: npm run keystone:start
