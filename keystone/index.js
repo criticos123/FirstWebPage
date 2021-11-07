@@ -22,11 +22,11 @@ const keystone = new Keystone({
   },
   adapter: new Adapter(adapterConfig),
   cookieSecret: process.env.COOKIE_SECRET,
+  port: process.env.PORT || 3000,
 });
 
 keystone.createList("User", UsersSchema);
 keystone.createList("Rental", RentalSchema);
-
 
 const authStrategy = keystone.createAuthStrategy({
   type: PasswordAuthStrategy,
