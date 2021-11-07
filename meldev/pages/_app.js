@@ -10,7 +10,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 
 function Meldev({ Component, pageProps }) {
   useEffect(() => {
-    // Remove the server-side injected CSS.
+    // Remove the server-side injected CSS
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
@@ -20,7 +20,7 @@ function Meldev({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
-        <Title/>
+        <Title />
         <Navbar />
         <CssBaseline />
         <Component {...pageProps} />
