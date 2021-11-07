@@ -1,82 +1,59 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+
 
 const useStyles = makeStyles((theme) => ({
-  mainFeaturedPost: {
-    position: "relative",
-    backgroundColor: theme.palette.grey[800],
-    color: theme.palette.common.white,
-    marginBottom: theme.spacing(4),
-    backgroundImage: "url(https://www.skrtichliving.ca/shared/media/properties/22/images/538/thumb.jpg)",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
+
+  main:{
+    backgroundImage:"url(https://images.dailyhive.com/20210512064924/montreal-apartments.jpg)",
+    height: "30vh",
     backgroundPosition: "center",
+    backgroundPepeat: "no-repeat",
+    backgroundSize: "cover",
+    opacity:"0.9",
+    background: "rgba(33, 33, 33, .9)",
+
+
   },
-  overlay: {
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    backgroundColor: "rgba(0,0,0,.3)",
+  
+  title:{
+
+    color:"#fff",
+    fontWeight:"bold",
+    textShadow: "black 10px 10px 10px ",
   },
-  mainFeaturedPostContent: {
-    position: "relative",
-    padding: theme.spacing(3),
-    [theme.breakpoints.up("md")]: {
-      padding: theme.spacing(6),
-      paddingRight: 0,
-    },
+
+  text:{
+
+    color:"#fff",
+    fontWeight:"bold",
+    textShadow: "black 10px 10px 10px ",
   },
+
 }));
 
-export default function MainFeaturedPost(props) {
+export default function MainFeaturedPost() {
   const classes = useStyles();
-  const { post } = props;
 
   return (
-    <Paper
-      className={classes.mainFeaturedPost}
-      style={{ backgroundImage: `url(${post.image})` }}
-    >
-      {/* Increase the priority of the hero background image */}
-      {
-        <img
-          style={{ display: "none" }}
-          src={post.image}
-          alt={post.imageText}
-        />
-      }
-      <div className={classes.overlay} />
-      <Grid container>
-        <Grid item md={6}>
-          <div className={classes.mainFeaturedPostContent}>
-            <Typography
-              component="h1"
-              variant="h3"
-              color="inherit"
-              gutterBottom
-            >
-              {post.title}
+    <Grid >
+        <Card sx={{ display: 'flex' }} className={classes.main}>
+          <CardContent sx={{ flex: 1 }}>
+            <Typography className={classes.title} component="h2" variant="h4">
+              Welcome to Meldev Holdings,
             </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
-              {post.description}
+            <Typography className={classes.text} variant="subtitle1" paragraph>
+             We provide quality rental service to everyone. Please feel free to browse and look at our properties available.
+             All our properties are located near downtown region near mcgill university.
             </Typography>
-            <Link variant="subtitle1" href="#">
-              {post.linkText}
-            </Link>
-          </div>
-        </Grid>
-      </Grid>
-    </Paper>
+          </CardContent>
+        </Card>
+    </Grid>
   );
 }
 
-MainFeaturedPost.propTypes = {
-  post: PropTypes.object,
-};
+

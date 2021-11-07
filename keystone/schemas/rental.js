@@ -40,6 +40,11 @@ module.exports = {
       type: Text,
       isRequired: true,
     },
+    availability: {
+      type: Text,
+      isRequired: true,
+    },
+    
   },
   labelField: "apartmentName",
 };

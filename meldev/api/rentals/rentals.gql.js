@@ -1,3 +1,4 @@
+
 import { gql } from "apollo-boost";
 
 export const RENTALS = {
@@ -9,6 +10,9 @@ export const RENTALS = {
         imageFront
         streetAddress
         id
+        availability
+
+
       }
     }
   `,
@@ -24,7 +28,10 @@ export const RENTALS = {
         imageBathroom
         imageLivingroom
         streetAddress
+        availability
+
+       
       }
     }
-`
+`,
 };

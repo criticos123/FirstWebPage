@@ -15,40 +15,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
   },
 
-  grid:{
-
-    display:"row",
-
-
-    '@media (max-width: 600px)' : {
-
-      backgroundColor:"red",
-      flexDirection:"column",
-  },
-
-  },
-  root: {
-    // display: "flex",
-    // maxWidth: "35%",
-    marginLeft: "10%",
-    // marginBottom: "10%",
-    marginTop: "5%",
-    // flexDirection: "column",
-    alignItems: "center",
-    // padding: "5px",
-
-    '@media (min-width: 600px)' : {
-
-      display:"flex",
-      alignItems:"center",
-      justifyContent:"center",
-      backgroundColor:'red',
-
-
-  },
-
-  },
-
   buttonStyle: {
     backgroundColor: "#4169E1",
     padding: "10px",
@@ -76,7 +42,7 @@ export default function Home() {
     <Seo title="Home" description="Meldev Apartments at great prices!">
       <Container maxWidth="lg">
         <main className={classes.bigbody}>
-          <MainFeaturedPost post={mainFeaturedPost} />
+        <MainFeaturedPost/>
         <Cards/>
         </main>
       </Container>

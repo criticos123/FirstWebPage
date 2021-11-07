@@ -27,6 +27,7 @@ const keystone = new Keystone({
 keystone.createList("User", UsersSchema);
 keystone.createList("Rental", RentalSchema);
 
+
 const authStrategy = keystone.createAuthStrategy({
   type: PasswordAuthStrategy,
   list: "User",

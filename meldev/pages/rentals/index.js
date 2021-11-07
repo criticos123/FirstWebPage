@@ -42,6 +42,11 @@ const useStyles = makeStyles((theme) => ({
   bold: {
     fontWeight: "bold",
   },
+  highlight:{
+
+    backgroundColor:"lime",
+
+  },
 }));
 
 export default function Rentals() {
@@ -66,6 +71,7 @@ export default function Rentals() {
                   imageAltText,
                   streetAddress,
                   id,
+                  availability,
                 },
                 index
               ) => (
@@ -87,6 +93,9 @@ export default function Rentals() {
                       </Typography>
                       <Typography>
                         <span className={classes.bold}>Price:</span> {price}
+                      </Typography>
+                      <Typography>
+                        <span className={classes.bold}>Availability:</span> {availability}
                       </Typography>
                     </CardContent>
                     <CardActions>

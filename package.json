@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "next:dev": "yarn --cwd meldev dev",
-    "keystone:dev": " PORT=3001 yarn --cwd keystone dev",
+    "keystone:dev": " PORT=3000 yarn --cwd keystone dev",
     "dev": "npm-run-all --parallel next:dev keystone:dev"
   },
   "dependencies": {
