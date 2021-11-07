@@ -1,1 +1,1 @@
-web: npm run keystone:start
+web: yarn keystone:start
