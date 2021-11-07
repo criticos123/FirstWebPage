@@ -5,7 +5,7 @@
   "scripts": {
     "next:dev": "yarn --cwd meldev dev",
     "keystone:dev": "yarn --cwd keystone dev",
-    "keystone:start": "cd keystone && npm install && npm run build && npm run start",
+    "keystone:start": "cd keystone && npm install && npm run build && npm run start PORT=$PORT",
     "dev": "npm-run-all --parallel next:dev keystone:dev"
   },
   "dependencies": {
