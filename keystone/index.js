@@ -8,8 +8,6 @@ require("dotenv").config();
 const UsersSchema = require("./schemas/users");
 const RentalSchema = require("./schemas/rental");
 
-const IS_PRODUCTION = process.env.NODE_ENV === "production";
-
 const PROJECT_NAME = "Meldev_Keystone";
 const DB_URL = process.env.MONGODB_URI;
 const adapterConfig = {
@@ -18,26 +16,13 @@ const adapterConfig = {
 
 const keystone = new Keystone({
   cookie: {
-    secure: IS_PRODUCTION, // Default to true in production
+    secure: process.env.NODE_ENV === "production", // Default to true in production
     maxAge: 1000 * 60 * 60 * 24 * 30, // 30 days
     sameSite: false,
   },
   adapter: new Adapter(adapterConfig),
   cookieSecret: process.env.COOKIE_SECRET,
   port: process.env.PORT || 3000,
-  defaultAccess: {
-    list: ({ authentication: { item }, operation, listKey }) => {
-      if (
-        !IS_PRODUCTION ||
-        operation === "read" ||
-        (operation === "auth" && listKey === "User")
-      ) {
-        return true;
-      }
-
-      return !!item;
-    },
-  },
 });
 
 keystone.createList("User", UsersSchema);
@@ -58,8 +43,8 @@ module.exports = {
     new GraphQLApp(),
     new AdminUIApp({
       name: PROJECT_NAME,
+      // authStrategy,
       enableDefaultRoute: true,
-      ...(IS_PRODUCTION ? { authStrategy } : {}),
     }),
   ],
   configureExpress: (app) => {
