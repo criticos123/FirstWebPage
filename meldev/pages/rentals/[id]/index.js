@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
   video:{
 
+    padding:"1px",
     
   },
 
