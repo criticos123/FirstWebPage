@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
 
   main:{
     backgroundImage:"url(https://images.dailyhive.com/20210512064924/montreal-apartments.jpg)",
-    height: "30vh",
+    height: "35vh",
     backgroundPosition: "center",
     backgroundPepeat: "no-repeat",
     backgroundSize: "cover",
