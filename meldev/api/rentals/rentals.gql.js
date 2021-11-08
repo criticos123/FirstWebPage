@@ -1,3 +1,4 @@
+
 import { gql } from "apollo-boost";
 
 export const RENTALS = {
@@ -10,12 +11,14 @@ export const RENTALS = {
         streetAddress
         id
         availability
+
+
       }
     }
   `,
   ITEM: gql`
     query Rental($id: ID!) {
-      Rental(where: { id: $id }) {
+      Rental(where: { id: $id}) {
         price
         apartmentName
         imageFront
@@ -26,7 +29,9 @@ export const RENTALS = {
         imageLivingroom
         streetAddress
         availability
+
+       
       }
     }
-  `,
+`,
 };
