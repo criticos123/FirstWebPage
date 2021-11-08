@@ -8,12 +8,12 @@
   "homepage": "https://github.com/keystonejs/keystone-5",
   "license": "MIT",
   "engines": {
-    "node": ">=10.0.0"
+    "node": "14.x"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development DISABLE_LOGGING=true keystone dev",
-    "build": "cross-env NODE_ENV=production keystone build",
-    "start": "cross-env NODE_ENV=production PORT=$PORT keystone start",
+    "build": "NODE_ENV=production keystone build",
+    "start": "NODE_ENV=production PORT=$PORT keystone start",
     "create-tables": "cross-env keystone create-tables"
   },
   "dependencies": {
