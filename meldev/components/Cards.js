@@ -44,12 +44,12 @@ export default function Cards() {
       {cards.map((card)=>(
       <Card key={card.id} className={classes.main} sx={{ maxWidth: 345 }}>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div" >
         {card.title}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button className={classes.buttons} size="small">{card.buttonLink}</Button>
+        <Button href={card.buttonLink} className={classes.buttons} size="small">{card.buttonLink}</Button>
       </CardActions>
     </Card>
       ))}

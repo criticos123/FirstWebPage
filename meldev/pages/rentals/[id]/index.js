@@ -12,6 +12,7 @@ import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
 
 
+
 import { getRentalItem } from "../../../api/rentals/rentals.queries";
 import Youtube from "../../../components/Youtube";
 import Seo from "../../../components/Seo";
@@ -124,7 +125,7 @@ export default function MediaControlCard() {
                   variant="body2"
                   color="text.primary"
                 >
-                  Number of Bedrooms:{apartmentName}
+                 <Bold>Number of Bedrooms: </Bold> {apartmentName}
                 </Typography>
                 </React.Fragment>
                 }
@@ -141,7 +142,7 @@ export default function MediaControlCard() {
                 variant="body2"
                 color="text.primary"
               >
-               Location:{streetAddress}
+               Location: {streetAddress}
               </Typography>
             </React.Fragment>
               }
@@ -158,7 +159,7 @@ export default function MediaControlCard() {
                   variant="body2"
                   color="text.primary"
                 >
-                  Price:{price}
+                <Bold>Price: </Bold> {price}
                 </Typography>
                 </React.Fragment>
                 }
@@ -170,12 +171,12 @@ export default function MediaControlCard() {
                 primary={
                 <React.Fragment>
                 <Typography
-                  sx={{ display: 'inline' }}
+                  sx={{ display: 'inline',fontWeight:"bold", }}
                   component="span"
                   variant="body2"
                   color="text.primary"
                 >
-                  Availability:{availability}
+                <Bold> Availability:</Bold>  {availability}
                 </Typography>
                 </React.Fragment>
               }
@@ -188,3 +189,8 @@ export default function MediaControlCard() {
     </Seo>
   );
 }
+
+const Bold= styled.span`
+
+  font-weight:bold;
+`;
