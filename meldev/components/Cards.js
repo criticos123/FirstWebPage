@@ -42,7 +42,7 @@ export default function Cards() {
   return (
       <div>
       {cards.map((card)=>(
-        <Card className={classes.main} sx={{ maxWidth: 345 }}>
+        <Card key={card} className={classes.main} sx={{ maxWidth: 345 }}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
         {card.title}
