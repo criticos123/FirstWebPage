@@ -25,14 +25,12 @@ const useStyles = makeStyles((theme) => ({
 let cardOne = {
   title: "Browse our Rentals that are currently Available",
   buttonLink: "rentals",
-  id:"1",
 };
 
 let cardTwo = {
   title: "Have questions? Click Here to send use an email",
   buttonLink: "contact",
-  id:"2",
-};
+}
 
 const cards = [cardOne, cardTwo];
 
@@ -40,7 +38,7 @@ export default function Cards() {
 
 
   const classes = useStyles();
-
+/* eslint-disable */
   return (
       <div>
       {cards.map((card)=>(
@@ -58,3 +56,5 @@ export default function Cards() {
       </div>
   );
 }
+
+/* eslint-enable */
