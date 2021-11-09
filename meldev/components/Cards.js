@@ -25,11 +25,13 @@ const useStyles = makeStyles((theme) => ({
 let cardOne = {
   title: "Browse our Rentals that are currently Available",
   buttonLink: "rentals",
+  id:"12",
 };
 
 let cardTwo = {
   title: "Have questions? Click Here to send use an email",
   buttonLink: "contact",
+  id="34",
 };
 
 const cards = [cardOne, cardTwo];
@@ -42,7 +44,7 @@ export default function Cards() {
   return (
       <div>
       {cards.map((card)=>(
-        <Card key={card} className={classes.main} sx={{ maxWidth: 345 }}>
+        <Card key={`rental-card-${index}`} className={classes.main} sx={{ maxWidth: 345 }}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
         {card.title}
