@@ -43,8 +43,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   imgs:{
-    width:"85px",
-    height:"55px",
+    width:"fit-content",
+    height:"10%",
     padding:"5px",
 
   },
