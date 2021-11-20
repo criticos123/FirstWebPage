@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   content: {
 
     padding: "10px",
-    width: "100%",
+    width: "20%",
     paddingRight: "10px",
   },
 
@@ -40,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
 
   imgs: {
     height: "55px",
-    width:"455px",
     padding: "5px",
   },
 
