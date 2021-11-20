@@ -37,7 +37,10 @@
   },
   "contactPage": {
     "header": "Contactez-Nous",
-    "send": "Envoyer"
+    "send": "Envoyer",
+    "name": "Nom",
+    "email": "Email "
+
   },
   "allRentalsPage": {
     "view": "Détails"

@@ -93,10 +93,10 @@ export default function Rentals() {
                         {streetAddress}
                       </Typography>
                       <Typography>
-                        <span className={classes.bold}>Price:</span> {price}
+                        <span className={classes.bold}>{getTranslations("rentalDetailsPage.price")}</span> {price}
                       </Typography>
                       <Typography>
-                        <span className={classes.bold}>Availability:</span>{" "}
+                        <span className={classes.bold}>{getTranslations("rentalDetailsPage.availability")}</span>{" "}
                         {availability}
                       </Typography>
                     </CardContent>
