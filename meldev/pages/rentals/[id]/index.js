@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
   imgs: {
     height: "55px",
     padding: "5px",
+    width:"50%",
   },
 
   mainImg: {
@@ -84,7 +85,7 @@ export default function MediaControlCard() {
         <Card>
           <CardContent className={classes.content}>
             <List
-              sx={{ width: "100%",maxWidth: 360,  bgcolor: "background.paper" }}
+              sx={{ maxWidth: 360,  bgcolor: "background.paper" }}
             >
               <ListItem alignItems="flex-start">
                 <React.Fragment>
