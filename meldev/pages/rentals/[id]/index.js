@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   imgs: {
     height: "55px",
     padding: "5px",
-    width:"50%",
+    width:"55px",
   },
 
   mainImg: {
