@@ -1,6 +1,13 @@
 import { NextSeo } from "next-seo";
 
-export default function Seo({ children, title, description }) {
+import useTranslations from "../hooks/use-translations";
+
+export default function Seo({ children, translationKey }) {
+  const { getTranslations } = useTranslations();
+
+  const title = getTranslations(`seo.title.${translationKey}`);
+  const description = getTranslations(`seo.description.${translationKey}`);
+
   return (
     <>
       <NextSeo title={`Meldev | ${title}`} description={description} />

@@ -22,7 +22,7 @@ const keystone = new Keystone({
   },
   adapter: new Adapter(adapterConfig),
   cookieSecret: process.env.COOKIE_SECRET,
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 3001,
 });
 
 keystone.createList("User", UsersSchema);

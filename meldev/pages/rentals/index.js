@@ -12,6 +12,7 @@ import Link from "next/link";
 
 import Seo from "../../components/Seo";
 import { getRentals } from "../../api/rentals/rentals.queries";
+import useTranslations from "../../hooks/use-translations";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -42,10 +43,8 @@ const useStyles = makeStyles((theme) => ({
   bold: {
     fontWeight: "bold",
   },
-  highlight:{
-
-    backgroundColor:"lime",
-
+  highlight: {
+    backgroundColor: "lime",
   },
 }));
 
@@ -53,12 +52,14 @@ export default function Rentals() {
   const classes = useStyles();
   const [rentals, setRentals] = useState([]);
 
+  const { getTranslations } = useTranslations();
+
   useEffect(() => {
     getRentals().then(setRentals);
   }, []);
 
   return (
-    <Seo title="Rentals" description="Apartment listings">
+    <Seo translationKey="allRentals">
       <main>
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>
@@ -95,14 +96,15 @@ export default function Rentals() {
                         <span className={classes.bold}>Price:</span> {price}
                       </Typography>
                       <Typography>
-                        <span className={classes.bold}>Availability:</span> {availability}
+                        <span className={classes.bold}>Availability:</span>{" "}
+                        {availability}
                       </Typography>
                     </CardContent>
                     <CardActions>
                       <Link href={`/rentals/${id}`}>
                         <a>
                           <Button size="small" color="primary">
-                            View
+                            {getTranslations("allRentalsPage.view")}
                           </Button>
                         </a>
                       </Link>

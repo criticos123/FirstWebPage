@@ -8,6 +8,8 @@ import emailjs from "emailjs-com";
 
 import Seo from "../../components/Seo";
 
+import useTranslations from "../hooks/use-translations";
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -53,11 +55,15 @@ function sendEmail(e) {
 export default function Contact() {
   const classes = useStyles();
 
+  const { getTranslations } = useTranslations();
+
   return (
-    <Seo title="Contact" description="Get in touch!">
+    <Seo translationKey="contact">
       <Container component="main" maxWidth="xs">
         <div className={classes.paper}>
-          <h2 className={classes.title}>Contact Us</h2>
+          <h2 className={classes.title}>
+            {getTranslations("contactPafe.header")}
+          </h2>
           <form className={classes.form} onSubmit={sendEmail}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
@@ -101,7 +107,7 @@ export default function Contact() {
               color="primary"
               className={classes.submit}
             >
-              Send
+              {getTranslations("contactPage.send")}
             </Button>
           </form>
         </div>

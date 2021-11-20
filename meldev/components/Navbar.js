@@ -2,8 +2,9 @@ import React from "react";
 import Link from "next/link";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-
 import { makeStyles } from "@material-ui/core/styles";
+
+import useTranslations from "../hooks/use-translations";
 
 const useStyles = makeStyles((theme) => ({
   "@global": {
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     borderTop: `2px solid #008ae6`,
     borderBottom: `2px solid #008ae6`,
     height: "100px;",
-    padding: theme.spacing(2,2),
+    padding: theme.spacing(2, 2),
   },
 
   toolbar: {
@@ -33,24 +34,25 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Arial, sans-serif",
     fontWeight: "bold",
   },
-  
+
   link: {
     margin: theme.spacing(1, 1.5),
     color: " #008ae6",
     textDecoration: "none",
     fontSize: "23px",
 
-    '&:hover': {
+    "&:hover": {
       color: "lightgrey",
-      textDecoration:"underline",
+      textDecoration: "underline",
       cursor: "pointer",
-   },
+    },
   },
-
 }));
 
 export default function Navbar() {
   const classes = useStyles();
+
+  const { getTranslations } = useTranslations();
 
   return (
     <React.Fragment>
@@ -62,18 +64,14 @@ export default function Navbar() {
       >
         <Toolbar className={classes.toolbar}>
           <nav>
-            <Link href="/rentals">
-              <a className={classes.link}>Rentals</a>
-            </Link>
-            <Link href="/contact">
-              <a className={classes.link}>Contact Us</a>
-            </Link>
+            {getTranslations("navbar.navlinks").map(({ href, text }, index) => (
+              <Link key={`navlink-${text}-${index}`} href={href}>
+                <a className={classes.link}>{text}</a>
+              </Link>
+            ))}
           </nav>
         </Toolbar>
       </AppBar>
     </React.Fragment>
   );
 }
-
-
-

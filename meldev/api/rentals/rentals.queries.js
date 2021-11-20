@@ -3,9 +3,9 @@ import { query } from "../../apollo";
 
 export async function getRentals() {
   const {
-    data: { allRentals }
+    data: { allRentals },
   } = await query({
-    query: RENTALS.ALL
+    query: RENTALS.ALL,
   });
 
   return allRentals;
@@ -13,12 +13,11 @@ export async function getRentals() {
 
 export async function getRentalItem(variables) {
   const {
-    data: { Rental }
+    data: { Rental },
   } = await query({
     query: RENTALS.ITEM,
-    variables
+    variables,
   });
 
   return Rental;
 }
-
