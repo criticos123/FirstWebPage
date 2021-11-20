@@ -8,7 +8,7 @@ import emailjs from "emailjs-com";
 
 import Seo from "../../components/Seo";
 
-import useTranslations from "../hooks/use-translations";
+import useTranslations from "../../hooks/use-translations";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -62,7 +62,7 @@ export default function Contact() {
       <Container component="main" maxWidth="xs">
         <div className={classes.paper}>
           <h2 className={classes.title}>
-            {getTranslations("contactPafe.header")}
+            {getTranslations("contactPage.header")}
           </h2>
           <form className={classes.form} onSubmit={sendEmail}>
             <Grid container spacing={2}>
