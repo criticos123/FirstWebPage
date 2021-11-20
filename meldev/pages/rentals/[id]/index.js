@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
   mainImg: {
     width: "345px",
     height: "305px",
+    marginRight:"10px",
   },
 }));
 
