@@ -27,8 +27,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   content: {
+
     padding: "10px",
-    width: "100%",
+    width: "fit-content",
     paddingRight: "10px",
   },
 
