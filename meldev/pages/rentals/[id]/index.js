@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
     padding: "10px",
     width: "100%",
-    paddingRight: "10px",
+    paddingRight: "20px",
   },
 
   video: {
@@ -98,7 +98,7 @@ export default function MediaControlCard() {
                 </React.Fragment>
               </ListItem>
               <Divider variant="inset" component="li" />
-              <ListItem>
+              <ListItem >
                 <React.Fragment>
                   <CardMedia
                     className={classes.imgs}
