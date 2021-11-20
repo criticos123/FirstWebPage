@@ -28,8 +28,8 @@ const useStyles = makeStyles((theme) => ({
 
   content: {
     padding: "10px",
-    width: "200%",
-    paddingRight: "20px",
+    width: "100%",
+    paddingRight: "10px",
   },
 
   video: {
@@ -37,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   imgs: {
-    width: "fit-content",
     height: "55px",
     padding: "5px",
   },
