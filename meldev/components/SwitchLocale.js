@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     margin: theme.spacing(1, 1.5),
     color: " #008ae6",
-    fontSize: "23px",
+    fontSize: "16px",
 
     "&:hover": {
       color: "lightgrey",
@@ -34,7 +34,6 @@ export default function SwitchLocale() {
       <a className={classes.link}>
       {title}
       </a>
-      
     </Link>
   );
 }

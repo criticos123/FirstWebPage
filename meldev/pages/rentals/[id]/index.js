@@ -24,12 +24,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginTop: "100px",
     marginBottom: "100px",
+    flexWrap:"Wrap",
   },
 
   content: {
 
     padding: "10px",
-    width: "fit-content",
+    width: "100%",
     paddingRight: "10px",
   },
 
@@ -39,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
   imgs: {
     height: "55px",
+    width:"455px",
     padding: "5px",
   },
 
@@ -83,7 +85,7 @@ export default function MediaControlCard() {
         <Card>
           <CardContent className={classes.content}>
             <List
-              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+              sx={{ width: "100%",maxWidth: 360,  bgcolor: "background.paper" }}
             >
               <ListItem alignItems="flex-start">
                 <React.Fragment>
@@ -96,7 +98,7 @@ export default function MediaControlCard() {
                 </React.Fragment>
               </ListItem>
               <Divider variant="inset" component="li" />
-              <ListItem alignItems="flex-start">
+              <ListItem>
                 <React.Fragment>
                   <CardMedia
                     className={classes.imgs}
