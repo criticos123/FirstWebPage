@@ -15,16 +15,16 @@ const useStyles = makeStyles((theme) => ({
   },
 
   link: {
-    margin: theme.spacing(3, 3,3,3),
+    margin: theme.spacing(3, 3, 3, 3),
     color: " #008ae6",
     textDecoration: "none",
     fontSize: "100px",
 
-    '&:hover': {
-        color: "lightgrey",
-        textDecoration:"underline",
-        cursor: "pointer",
-     },
+    "&:hover": {
+      color: "lightgrey",
+      textDecoration: "underline",
+      cursor: "pointer",
+    },
   },
 }));
 
@@ -33,11 +33,11 @@ export default function Navbar() {
 
   return (
     <React.Fragment>
-            <Link href="/">
-                <Typography variant="h1">
-                    <a className={classes.link}>Meldev</a>
-                </Typography>
-            </Link>
+      <Link passHref href="/">
+        <Typography variant="h1">
+          <a className={classes.link}>Meldev</a>
+        </Typography>
+      </Link>
     </React.Fragment>
   );
 }

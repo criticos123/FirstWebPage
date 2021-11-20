@@ -1,0 +1,51 @@
+{
+  "seo": {
+    "title": {
+      "home": "Home",
+      "allRentals": "Rentals",
+      "rental": "Apartment",
+      "contact": "Contact"
+    },
+    "description": {
+      "home": "Meldev apartments at great prices!",
+      "allRentals": "Apartment listings",
+      "rental": "Apartment listing",
+      "contact": "Get in touch"
+    }
+  },
+  "navbar": {
+    "navlinks": [
+      { "href": "/rentals", "text": "Rentals" },
+      { "href": "/contact", "text": "Contact Us" }
+    ]
+  },
+  "homepage": {
+    "header": "Welcome to Meldev Holdings,",
+    "body": "We provide quality rental service to everyone. Please feel free to browse and look at our properties available. All our properties are located near downtown region near mcgill university.",
+    "cards": [
+      {
+        "title": "Browse our Rentals that are currently Available",
+        "href": "rentals",
+        "linkText": "RENTALS"
+      },
+      {
+        "title": "Have questions? Click Here to send us an email",
+        "href": "contact",
+        "linkText": "CONTACT"
+      }
+    ]
+  },
+  "contactPage": {
+    "header": "Contact Us",
+    "send": "Send"
+  },
+  "allRentalsPage": {
+    "view": "View"
+  },
+  "rentalDetailsPage": {
+    "bedroomNumber": "Number of Bedrooms: ",
+    "location": "Location: ",
+    "price": "Price: ",
+    "availability": "Availability: "
+  }
+}
