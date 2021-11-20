@@ -6,12 +6,11 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import Divider from '@mui/material/Divider';
-import ListItemText from '@mui/material/ListItemText';
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Divider from "@mui/material/Divider";
+import ListItemText from "@mui/material/ListItemText";
 import styled from "styled-components";
-
 
 import { getRentalItem } from "../../../api/rentals/rentals.queries";
 import Youtube from "../../../components/Youtube";
@@ -27,30 +26,26 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "100px",
   },
 
-  content:{
-
-    padding:"10px",
-    width:"200%",
-    paddingRight:"20px",
+  content: {
+    padding: "10px",
+    width: "200%",
+    paddingRight: "20px",
   },
 
   video: {
     padding: "1px",
   },
 
-  imgs:{
-    width:"85px",
-    height:"55px",
-    padding:"5px",
-
+  imgs: {
+    width: "85px",
+    height: "55px",
+    padding: "5px",
   },
 
-  mainImg:{
-
-    width:"345px",
-    height:"305px",
-  }
-
+  mainImg: {
+    width: "345px",
+    height: "305px",
+  },
 }));
 
 export default function MediaControlCard() {
@@ -86,73 +81,22 @@ export default function MediaControlCard() {
     <Seo translationKey="rental">
       <div className={classes.wrapper}>
         <Card>
-        <CardContent className={classes.content}>
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-        <ListItem alignItems="flex-start">
-          <React.Fragment>
-          <CardMedia className={classes.mainImg}
-                component="img"
-                alt="front"
-                image={imageFront}
-          />
-          </React.Fragment>
-          </ListItem>
-            <Divider variant="inset" component="li" />
-            <ListItem alignItems="flex-start">
-              <React.Fragment>
-              <CardMedia className={classes.imgs}
-                component="img"
-                alt="kitchen"
-                image={imageKitchen}
-              />
-              <CardMedia className={classes.imgs}
-              component="img"
-              alt="bedroom"
-              image={imageBedroom}
-              />
-              <CardMedia className={classes.imgs}
-              component="img"
-              alt="bathroom"
-              image={imageBathroom}
-              />
-              <CardMedia className={classes.imgs}
-              component="img"
-              alt="livingroom"
-              image={imageLivingroom}
-              />
-              </React.Fragment>
-            </ListItem>
-            <Divider variant="inset" component="li" />
-            <ListItem alignItems="flex-start">
-              <ListItemText
-              primary={
+          <CardContent className={classes.content}>
+            <List
+              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+            >
+              <ListItem alignItems="flex-start">
                 <React.Fragment>
-                  <Youtube embedId={video} />
+                  <CardMedia
+                    className={classes.mainImg}
+                    component="img"
+                    alt="front"
+                    image={imageFront}
+                  />
                 </React.Fragment>
-                }
-              locale/>
-            </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
-          <ListItemText
-            primary={
-            <React.Fragment>
-              <Typography
-                sx={{ display: 'inline' }}
-                component="span"
-                variant="body2"
-                color="text.primary"
-              >
-               <Bold> Location:</Bold>{streetAddress}
-              </Typography>
-            </React.Fragment>
-              }
-            />
-            </ListItem>
-            <Divider variant="inset" component="li" />
-            <ListItem alignItems="flex-start">
-              <ListItemText
-              primary={
+              </ListItem>
+              <Divider variant="inset" component="li" />
+              <ListItem alignItems="flex-start">
                 <React.Fragment>
                   <CardMedia
                     className={classes.imgs}
@@ -191,9 +135,9 @@ export default function MediaControlCard() {
                         variant="body2"
                         color="text.primary"
                       >
-                        <strong>
+                        <Bold>
                           {getTranslations("rentalDetailsPage.bedroomNumber")}
-                        </strong>{" "}
+                        </Bold>{" "}
                         {apartmentName}
                       </Typography>
                     </React.Fragment>
@@ -211,9 +155,10 @@ export default function MediaControlCard() {
                         variant="body2"
                         color="text.primary"
                       >
-                        {getTranslations("rentalDetailsPage.location", {
-                          streetAddress,
-                        })}
+                        <Bold>
+                          {getTranslations("rentalDetailsPage.location")}
+                        </Bold>
+                        {streetAddress}
                       </Typography>
                     </React.Fragment>
                   }
@@ -230,9 +175,9 @@ export default function MediaControlCard() {
                         variant="body2"
                         color="text.primary"
                       >
-                        <strong>
+                        <Bold>
                           {getTranslations("rentalDetailsPage.price")}
-                        </strong>{" "}
+                        </Bold>{" "}
                         {price}
                       </Typography>
                     </React.Fragment>
@@ -245,14 +190,14 @@ export default function MediaControlCard() {
                   primary={
                     <React.Fragment>
                       <Typography
-                        sx={{ display: "inline", fontWeight: "strong" }}
+                        sx={{ display: "inline", fontWeight: "bold" }}
                         component="span"
                         variant="body2"
                         color="text.primary"
                       >
-                        <strong>
+                        <Bold>
                           {getTranslations("rentalDetailsPage.availability")}
-                        </strong>{" "}
+                        </Bold>{" "}
                         {availability}
                       </Typography>
                     </React.Fragment>
@@ -266,3 +211,7 @@ export default function MediaControlCard() {
     </Seo>
   );
 }
+
+const Bold = styled.span`
+  font-weight: bold;
+`;

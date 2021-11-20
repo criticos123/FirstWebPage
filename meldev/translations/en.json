@@ -44,7 +44,7 @@
   },
   "rentalDetailsPage": {
     "bedroomNumber": "Number of Bedrooms: ",
-    "location": "Location: <%= streetAddress %>",
+    "location": "Location: ",
     "price": "Price: ",
     "availability": "Availability: "
   }
