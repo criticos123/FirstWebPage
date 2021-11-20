@@ -1,0 +1,51 @@
+{
+  "seo": {
+    "title": {
+      "home": "Accueil",
+      "allRentals": "Locations",
+      "rental": "Appartement",
+      "contact": "Contact"
+    },
+    "description": {
+      "home": "Meldev appartements à des prix imbattables !",
+      "allRentals": "Annonces d'appartements",
+      "rental": "Appartements",
+      "contact": "Contactez-nous"
+    }
+  },
+  "navbar": {
+    "navlinks": [
+      { "href": "/rentals", "text": "Locations" },
+      { "href": "/contact", "text": "Contactez-nous" }
+    ]
+  },
+  "homepage": {
+    "header": "Bienvenue chez Meldev Holdings,",
+    "body": "Nous offrons un service de location de qualité à tous. N'hésitez pas à parcourir et à regarder nos propriétés disponibles. Toutes nos propriétés sont situées près de la région du centre-ville, près de l'université mcgill.",
+    "cards": [
+      {
+        "title": "Parcourez nos locations actuellement disponibles",
+        "href": "rentals",
+        "linkText": "LOCATIONS"
+      },
+      {
+        "title": "Avoir des questions? Cliquez ici pour nous envoyer un courriel",
+        "href": "contact",
+        "linkText": "CONTACT"
+      }
+    ]
+  },
+  "contactPage": {
+    "header": "Contactez-Nous",
+    "send": "Envoyer"
+  },
+  "allRentalsPage": {
+    "view": "Détails"
+  },
+  "rentalDetailsPage": {
+    "bedroomNumber": "Nombre de chambres: ",
+    "location": "Location: ",
+    "price": "Prix: ",
+    "availability": "Disponibilité: "
+  }
+}

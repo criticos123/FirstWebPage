@@ -1,13 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-
 import Container from "@material-ui/core/Container";
+
 import MainFeaturedPost from "../components/MainFeaturedPost";
-
 import Cards from "../components/Cards";
-
 import Seo from "../components/Seo";
-
 import apartmentexample5 from "../assets/apartmentexample5.jpg";
 
 const useStyles = makeStyles((theme) => ({
@@ -34,16 +31,15 @@ const mainFeaturedPost = {
   imgText: "main image description",
 };
 
-
 export default function Home() {
   const classes = useStyles();
 
   return (
-    <Seo title="Home" description="Meldev Apartments at great prices!">
+    <Seo translationKey="home">
       <Container maxWidth="lg">
         <main className={classes.bigbody}>
-        <MainFeaturedPost/>
-        <Cards/>
+          <MainFeaturedPost />
+          <Cards />
         </main>
       </Container>
     </Seo>
