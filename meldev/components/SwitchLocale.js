@@ -8,11 +8,11 @@ const localesMapping = {
 };
 
 export default function SwitchLocale() {
-  const { locale, pathname, asPath, query } = useRouter();
+  const { locale, pathname, query } = useRouter();
   const { title, newLocale } = useMemo(() => localesMapping[locale], [locale]);
 
   return (
-    <Link href={asPath} asPath={asPath} query={query} locale={newLocale}>
+    <Link href={{ pathname, query }} locale={newLocale}>
       {title}
     </Link>
   );
