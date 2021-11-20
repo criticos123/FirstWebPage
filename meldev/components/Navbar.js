@@ -4,6 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles } from "@material-ui/core/styles";
 
+import SwitchLocale from "./SwitchLocale";
 import useTranslations from "../hooks/use-translations";
 
 const useStyles = makeStyles((theme) => ({
@@ -69,6 +70,7 @@ export default function Navbar() {
                 <a className={classes.link}>{text}</a>
               </Link>
             ))}
+            <SwitchLocale />
           </nav>
         </Toolbar>
       </AppBar>
