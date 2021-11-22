@@ -10,13 +10,13 @@
       "home": "Meldev appartements à des prix imbattables !",
       "allRentals": "Annonces d'appartements",
       "rental": "Appartements",
-      "contact": "Contactez-nous"
+      "contact": "Contact"
     }
   },
   "navbar": {
     "navlinks": [
       { "href": "/rentals", "text": "Locations" },
-      { "href": "/contact", "text": "Contactez-nous" }
+      { "href": "/contact", "text": "Contactez" }
     ]
   },
   "homepage": {

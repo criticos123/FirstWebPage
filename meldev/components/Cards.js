@@ -40,8 +40,8 @@ export default function Cards() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Link href={href} className={classes.buttons}>
-                <Button>{linkText}</Button>
+              <Link href={href} >
+                <Button color="primary" className={classes.buttons}>{linkText}</Button>
               </Link>
             </CardActions>
           </Card>

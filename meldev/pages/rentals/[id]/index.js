@@ -11,6 +11,10 @@ import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import styled from "styled-components";
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+
 
 import { getRentalItem } from "../../../api/rentals/rentals.queries";
 import Youtube from "../../../components/Youtube";
@@ -42,12 +46,35 @@ const useStyles = makeStyles((theme) => ({
     height: "55px",
     padding: "5px",
     width:"55px",
+    '&:hover': {
+      opacity:"0.5",
+      cursor:"pointer",
+
+    },
+
+    '@media (max-width: 380px)' : {
+      width: '30%',
+      
+
+    }
   },
 
   mainImg: {
     width: "345px",
     height: "305px",
     marginRight:"10px",
+
+    modal: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+  },
+  paper: {
+      backgroundColor: theme.palette.background.paper,
+      border: '2px solid #000',
+      boxShadow: theme.shadows[5],
+      padding: theme.spacing(2, 4, 3),
+  },
   },
 }));
 
@@ -56,6 +83,19 @@ export default function MediaControlCard() {
   const [rentalItem, setRentalItem] = useState([]);
 
   const { getTranslations } = useTranslations();
+
+  const [open, setOpen] = useState(false);
+
+  const [pop, setPop] = React.useState(false);
+
+  const handleOpen = () => {
+    setPop(true);
+  };
+  const handleClose = () => {
+    setPop(false);
+  };
+  
+ 
 
   const {
     query: { id },
@@ -66,6 +106,8 @@ export default function MediaControlCard() {
       getRentalItem({ id }).then(setRentalItem);
     }
   }, [id]);
+
+ 
 
   const {
     imageFront,
@@ -102,6 +144,7 @@ export default function MediaControlCard() {
               <ListItem >
                 <React.Fragment>
                   <CardMedia
+                    onClick={handleOpen}
                     className={classes.imgs}
                     component="img"
                     alt="kitchen"
@@ -111,7 +154,7 @@ export default function MediaControlCard() {
                     className={classes.imgs}
                     component="img"
                     alt="bedroom"
-                    image={imageBedroom}
+                    image={imageKitchen}
                   />
                   <CardMedia
                     className={classes.imgs}
@@ -181,7 +224,7 @@ export default function MediaControlCard() {
                         <Bold>
                           {getTranslations("rentalDetailsPage.price")}
                         </Bold>{" "}
-                        {price}
+                        ${price}
                       </Typography>
                     </React.Fragment>
                   }
