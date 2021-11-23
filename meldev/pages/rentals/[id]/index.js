@@ -204,7 +204,7 @@ export default function MediaControlCard() {
                         <Bold>
                           {getTranslations("rentalDetailsPage.location")}
                         </Bold>
-                        {streetAddress}
+                         {streetAddress}
                       </Typography>
                     </React.Fragment>
                   }
