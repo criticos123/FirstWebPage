@@ -86,15 +86,6 @@ export default function MediaControlCard() {
 
   const [open, setOpen] = useState(false);
 
-  const [pop, setPop] = React.useState(false);
-
-  const handleOpen = () => {
-    setPop(true);
-  };
-  const handleClose = () => {
-    setPop(false);
-  };
-  
  
 
   const {
@@ -144,17 +135,17 @@ export default function MediaControlCard() {
               <ListItem >
                 <React.Fragment>
                   <CardMedia
-                    onClick={handleOpen}
                     className={classes.imgs}
                     component="img"
                     alt="kitchen"
                     image={imageKitchen}
                   />
+                  
                   <CardMedia
                     className={classes.imgs}
                     component="img"
                     alt="bedroom"
-                    image={imageKitchen}
+                    image={imageBedroom}
                   />
                   <CardMedia
                     className={classes.imgs}
