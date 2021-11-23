@@ -69,9 +69,8 @@ export default function Rentals() {
                   price,
                   apartmentName,
                   imageFront,
-                  imageAltText,
                   streetAddress,
-                  id,
+                  _id: id,
                   availability,
                 },
                 index
@@ -80,9 +79,8 @@ export default function Rentals() {
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
-                      image={imageFront}
-                      alt={imageAltText}
-                      title="Image title"
+                      image={imageFront && imageFront.asset.url}
+                      alt="Apartment Front"
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">

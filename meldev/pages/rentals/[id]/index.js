@@ -66,10 +66,7 @@ export default function MediaControlCard() {
 
   const {
     imageFront,
-    imageKitchen,
-    imageBedroom,
-    imageBathroom,
-    imageLivingroom,
+    images,
     price,
     apartmentName,
     streetAddress,
@@ -87,41 +84,32 @@ export default function MediaControlCard() {
             >
               <ListItem alignItems="flex-start">
                 <React.Fragment>
-                  <CardMedia
-                    className={classes.mainImg}
-                    component="img"
-                    alt="front"
-                    image={imageFront}
-                  />
+                  {imageFront && (
+                    <CardMedia
+                      className={classes.mainImg}
+                      component="img"
+                      alt="Apartment Front"
+                      image={imageFront.asset.url}
+                    />
+                  )}
                 </React.Fragment>
               </ListItem>
               <Divider variant="inset" component="li" />
               <ListItem alignItems="flex-start">
                 <React.Fragment>
-                  <CardMedia
-                    className={classes.imgs}
-                    component="img"
-                    alt="kitchen"
-                    image={imageKitchen}
-                  />
-                  <CardMedia
-                    className={classes.imgs}
-                    component="img"
-                    alt="bedroom"
-                    image={imageBedroom}
-                  />
-                  <CardMedia
-                    className={classes.imgs}
-                    component="img"
-                    alt="bathroom"
-                    image={imageBathroom}
-                  />
-                  <CardMedia
-                    className={classes.imgs}
-                    component="img"
-                    alt="livingroom"
-                    image={imageLivingroom}
-                  />
+                  {images &&
+                    images.map(
+                      ({ image, description }, index) =>
+                        image && (
+                          <CardMedia
+                            key={`rental-image=${index}`}
+                            className={classes.imgs}
+                            component="img"
+                            alt={description}
+                            image={image.asset.url}
+                          />
+                        )
+                    )}
                 </React.Fragment>
               </ListItem>
               <Divider variant="inset" component="li" />
