@@ -1,29 +1,48 @@
-import { gql } from "apollo-boost";
+import { gql } from "@apollo/client";
 
 export const RENTALS = {
   ALL: gql`
     query {
-      allRentals {
-        price
-        apartmentName
-        imageFront
+      allRental {
+        _id
+        apartmentName {
+          en
+          fr
+        }
+        imageFront {
+          asset {
+            url
+            altText
+          }
+        }
         streetAddress
-        id
+        price
         availability
       }
     }
   `,
   ITEM: gql`
     query Rental($id: ID!) {
-      Rental(where: { id: $id }) {
+      Rental(id: $id) {
         price
-        apartmentName
-        imageFront
-        video
-        imageKitchen
-        imageBedroom
-        imageBathroom
-        imageLivingroom
+        apartmentName {
+          en
+          fr
+        }
+        imageFront {
+          asset {
+            url
+            altText
+          }
+        }
+        images {
+          image {
+            asset {
+              url
+            }
+          }
+          description
+        }
         streetAddress
         availability
       }

@@ -11,10 +11,9 @@ import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import styled from "styled-components";
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
 
 import { getRentalItem } from "../../../api/rentals/rentals.queries";
 import Youtube from "../../../components/Youtube";
@@ -28,11 +27,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginTop: "100px",
     marginBottom: "100px",
-    flexWrap:"Wrap",
+    flexWrap: "Wrap",
   },
 
   content: {
-
     padding: "10px",
     width: "100%",
     paddingRight: "20px",
@@ -45,36 +43,33 @@ const useStyles = makeStyles((theme) => ({
   imgs: {
     height: "55px",
     padding: "5px",
-    width:"55px",
-    '&:hover': {
-      opacity:"0.5",
-      cursor:"pointer",
-
+    width: "55px",
+    "&:hover": {
+      opacity: "0.5",
+      cursor: "pointer",
     },
 
-    '@media (max-width: 380px)' : {
-      width: '30%',
-      
-
-    }
+    "@media (max-width: 380px)": {
+      width: "30%",
+    },
   },
 
   mainImg: {
     width: "345px",
     height: "305px",
-    marginRight:"10px",
+    marginRight: "10px",
 
     modal: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-  },
-  paper: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    paper: {
       backgroundColor: theme.palette.background.paper,
-      border: '2px solid #000',
+      border: "2px solid #000",
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
-  },
+    },
   },
 }));
 
@@ -86,8 +81,6 @@ export default function MediaControlCard() {
 
   const [open, setOpen] = useState(false);
 
- 
-
   const {
     query: { id },
   } = useRouter();
@@ -98,14 +91,9 @@ export default function MediaControlCard() {
     }
   }, [id]);
 
- 
-
   const {
     imageFront,
-    imageKitchen,
-    imageBedroom,
-    imageBathroom,
-    imageLivingroom,
+    images,
     price,
     apartmentName,
     streetAddress,
@@ -118,47 +106,35 @@ export default function MediaControlCard() {
       <div className={classes.wrapper}>
         <Card>
           <CardContent className={classes.content}>
-            <List
-              sx={{ maxWidth: 360,  bgcolor: "background.paper" }}
-            >
+            <List sx={{ maxWidth: 360, bgcolor: "background.paper" }}>
               <ListItem alignItems="flex-start">
                 <React.Fragment>
-                  <CardMedia
-                    className={classes.mainImg}
-                    component="img"
-                    alt="front"
-                    image={imageFront}
-                  />
+                  {imageFront && (
+                    <CardMedia
+                      className={classes.mainImg}
+                      component="img"
+                      alt="Apartment Front"
+                      image={imageFront.asset.url}
+                    />
+                  )}
                 </React.Fragment>
               </ListItem>
               <Divider variant="inset" component="li" />
-              <ListItem >
+              <ListItem>
                 <React.Fragment>
-                  <CardMedia
-                    className={classes.imgs}
-                    component="img"
-                    alt="kitchen"
-                    image={imageKitchen}
-                  />
-                  
-                  <CardMedia
-                    className={classes.imgs}
-                    component="img"
-                    alt="bedroom"
-                    image={imageBedroom}
-                  />
-                  <CardMedia
-                    className={classes.imgs}
-                    component="img"
-                    alt="bathroom"
-                    image={imageBathroom}
-                  />
-                  <CardMedia
-                    className={classes.imgs}
-                    component="img"
-                    alt="livingroom"
-                    image={imageLivingroom}
-                  />
+                  {images &&
+                    images.map(
+                      ({ image, description }, index) =>
+                        image && (
+                          <CardMedia
+                            key={`rental-image=${index}`}
+                            className={classes.imgs}
+                            component="img"
+                            alt={description}
+                            image={image.asset.url}
+                          />
+                        )
+                    )}
                 </React.Fragment>
               </ListItem>
               <Divider variant="inset" component="li" />
@@ -195,7 +171,7 @@ export default function MediaControlCard() {
                         <Bold>
                           {getTranslations("rentalDetailsPage.location")}
                         </Bold>
-                         {streetAddress}
+                        {streetAddress}
                       </Typography>
                     </React.Fragment>
                   }

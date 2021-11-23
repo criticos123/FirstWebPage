@@ -1,14 +1,17 @@
 import { RENTALS } from "./rentals.gql";
 import { query } from "../../apollo";
+import { parseLocalizedStrings } from "../../utils/string";
 
 export async function getRentals() {
   const {
-    data: { allRentals },
+    data: { allRental },
   } = await query({
     query: RENTALS.ALL,
   });
 
-  return allRentals;
+  const parsedRentals = allRental.map(parseLocalizedStrings);
+
+  return parsedRentals;
 }
 
 export async function getRentalItem(variables) {
@@ -19,5 +22,7 @@ export async function getRentalItem(variables) {
     variables,
   });
 
-  return Rental;
+  const parsedRental = parseLocalizedStrings(Rental);
+
+  return parsedRental;
 }
