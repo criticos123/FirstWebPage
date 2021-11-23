@@ -74,7 +74,7 @@ export default function Contact() {
                   required
                   Send
                   fullWidth
-                  label="Name"
+                  label=  {getTranslations("contactPage.name")}
                   autoFocus
                 />
               </Grid>
@@ -84,7 +84,7 @@ export default function Contact() {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label={getTranslations("contactPage.email")}
                   name="from_email"
                   autoComplete="email"
                 />

@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import SwitchLocale from "./SwitchLocale";
 import useTranslations from "../hooks/use-translations";
+import { getDisplayName } from "next/dist/shared/lib/utils";
 
 const useStyles = makeStyles((theme) => ({
   "@global": {
@@ -48,6 +49,14 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
   },
+
+  navbar:{
+    display:"flex",
+    width: "100%",
+    justifyContent:"space-between",
+    alignItems: "center"
+
+  }
 }));
 
 export default function Navbar() {
@@ -64,14 +73,18 @@ export default function Navbar() {
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
-          <nav>
+          <>
+          <nav className={classes.navbar}>
+            <div>
             {getTranslations("navbar.navlinks").map(({ href, text }, index) => (
               <Link key={`navlink-${text}-${index}`} href={href}>
                 <a className={classes.link}>{text}</a>
               </Link>
             ))}
+            </div>
             <SwitchLocale />
           </nav>
+          </>
         </Toolbar>
       </AppBar>
     </React.Fragment>
