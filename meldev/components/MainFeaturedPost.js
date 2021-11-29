@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   main: {
     backgroundImage:
       "url(https://images.dailyhive.com/20210512064924/montreal-apartments.jpg)",
-    height: "35vh",
+    height: "45vh",
     backgroundPosition: "center",
     backgroundPepeat: "no-repeat",
     backgroundSize: "cover",
@@ -40,7 +40,7 @@ export default function MainFeaturedPost() {
   return (
     <Grid>
       <Card sx={{ display: "flex" }} className={classes.main}>
-        <CardContent sx={{ flex: 1 }}>
+        <CardContent sx={{ flex: 2 }}>
           <Typography className={classes.title} component="h2" variant="h4">
             {getTranslations("homepage.header")}
           </Typography>

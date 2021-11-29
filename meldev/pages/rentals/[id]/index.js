@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   mainImg: {
-    height:"30vh",
+
 
   },
 
