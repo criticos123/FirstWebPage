@@ -45,38 +45,19 @@ const useStyles = makeStyles((theme) => ({
   },
 
   content: {
-    padding: "10px",
+    padding: "5px",
     width: "100%",
-    paddingRight: "20px",
   },
 
   video: {
     padding: "1px",
   },
 
-  imgs: {
-
-  },
-
   mainImg: {
-    width: "345px",
-    height: "305px",
-    marginRight: "10px",
-
-    modal: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    paper: {
-      backgroundColor: theme.palette.background.paper,
-      border: "2px solid #000",
-      boxShadow: theme.shadows[5],
-      padding: theme.spacing(2, 4, 3),
-    },
-
+    height:"30vh",
 
   },
+
 }));
 
 const style = {
