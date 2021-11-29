@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
+
+
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -10,10 +12,21 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
+import Button from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination"
+import "swiper/css/navigation"
+
+import SwiperCore, {Pagination,Navigation} from 'swiper';
 import styled from "styled-components";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
+
+
 
 import { getRentalItem } from "../../../api/rentals/rentals.queries";
 import Youtube from "../../../components/Youtube";
@@ -28,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "100px",
     marginBottom: "100px",
     flexWrap: "Wrap",
+
   },
 
   content: {
@@ -41,17 +55,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   imgs: {
-    height: "55px",
-    padding: "5px",
-    width: "55px",
-    "&:hover": {
-      opacity: "0.5",
-      cursor: "pointer",
-    },
 
-    "@media (max-width: 380px)": {
-      width: "30%",
-    },
   },
 
   mainImg: {
@@ -70,8 +74,31 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
     },
+
+
   },
 }));
+
+const style = {
+  position: 'absolute',
+  top: '40%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+
+};
+
+const buttonstyle = {
+
+  width: '100%',
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+
+};
+
+SwiperCore.use([Pagination,Navigation]);
 
 export default function MediaControlCard() {
   const classes = useStyles();
@@ -79,7 +106,6 @@ export default function MediaControlCard() {
 
   const { getTranslations } = useTranslations();
 
-  const [open, setOpen] = useState(false);
 
   const {
     query: { id },
@@ -101,6 +127,10 @@ export default function MediaControlCard() {
     availability,
   } = rentalItem;
 
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Seo translationKey="rental">
       <div className={classes.wrapper}>
@@ -115,17 +145,30 @@ export default function MediaControlCard() {
                       component="img"
                       alt="Apartment Front"
                       image={imageFront.asset.url}
+                      
                     />
                   )}
                 </React.Fragment>
               </ListItem>
               <Divider variant="inset" component="li" />
-              <ListItem>
+              <ListItem > 
                 <React.Fragment>
-                  {images &&
-                    images.map(
+                <Button style={buttonstyle} onClick={handleOpen} variant="contained">Gallery</Button>
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                >
+                  <Box sx={style}>
+                  <Swiper  slidesPerView={1} spaceBetween={30} loop={true} pagination={{
+                    "clickable": true
+                  }} navigation={true} className="mySwiper">
+                    {images &&
+                      images.map(
                       ({ image, description }, index) =>
                         image && (
+                          <SwiperSlide>
                           <CardMedia
                             key={`rental-image=${index}`}
                             className={classes.imgs}
@@ -133,8 +176,12 @@ export default function MediaControlCard() {
                             alt={description}
                             image={image.asset.url}
                           />
+                          </SwiperSlide>
                         )
-                    )}
+                    )}   
+                    </Swiper>
+                  </Box>
+                </Modal>
                 </React.Fragment>
               </ListItem>
               <Divider variant="inset" component="li" />
@@ -151,7 +198,7 @@ export default function MediaControlCard() {
                         <Bold>
                           {getTranslations("rentalDetailsPage.bedroomNumber")}
                         </Bold>{" "}
-                        {apartmentName}
+                        <Text>{apartmentName}</Text>
                       </Typography>
                     </React.Fragment>
                   }
@@ -171,7 +218,7 @@ export default function MediaControlCard() {
                         <Bold>
                           {getTranslations("rentalDetailsPage.location")}
                         </Bold>
-                        {streetAddress}
+                       <Text> {streetAddress}</Text>
                       </Typography>
                     </React.Fragment>
                   }
@@ -191,7 +238,7 @@ export default function MediaControlCard() {
                         <Bold>
                           {getTranslations("rentalDetailsPage.price")}
                         </Bold>{" "}
-                        ${price}
+                       <Text>${price}</Text>
                       </Typography>
                     </React.Fragment>
                   }
@@ -211,7 +258,7 @@ export default function MediaControlCard() {
                         <Bold>
                           {getTranslations("rentalDetailsPage.availability")}
                         </Bold>{" "}
-                        {availability}
+                       <Text>{availability}</Text> 
                       </Typography>
                     </React.Fragment>
                   }
@@ -227,4 +274,9 @@ export default function MediaControlCard() {
 
 const Bold = styled.span`
   font-weight: bold;
+  font-size: 20px;
+`;
+
+const Text = styled.span`
+  font-size: 20px;
 `;

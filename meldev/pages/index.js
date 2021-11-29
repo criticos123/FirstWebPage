@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
+
 import MainFeaturedPost from "../components/MainFeaturedPost";
 import Cards from "../components/Cards";
 import Seo from "../components/Seo";
