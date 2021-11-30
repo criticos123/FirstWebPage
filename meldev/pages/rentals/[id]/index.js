@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-
-
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -12,21 +10,19 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
-import Button from '@mui/material/Button';
-import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
+import Button from "@mui/material/Button";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination"
-import "swiper/css/navigation"
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import SwiperCore, {Pagination,Navigation} from 'swiper';
+import SwiperCore, { Pagination, Navigation } from "swiper";
 import styled from "styled-components";
-
-
 
 import { getRentalItem } from "../../../api/rentals/rentals.queries";
 import Youtube from "../../../components/Youtube";
@@ -41,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "100px",
     marginBottom: "100px",
     flexWrap: "Wrap",
-
   },
 
   content: {
@@ -53,40 +48,32 @@ const useStyles = makeStyles((theme) => ({
     padding: "1px",
   },
 
-  mainImg: {
-
-
-  },
-
+  mainImg: {},
 }));
 
 const style = {
-  position: 'absolute',
-  top: '40%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "40%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
+  bgcolor: "background.paper",
   boxShadow: 24,
-
 };
 
 const buttonstyle = {
-
-  width: '100%',
-  bgcolor: 'background.paper',
+  width: "100%",
+  bgcolor: "background.paper",
   boxShadow: 24,
-
 };
 
-SwiperCore.use([Pagination,Navigation]);
+SwiperCore.use([Pagination, Navigation]);
 
 export default function MediaControlCard() {
   const classes = useStyles();
   const [rentalItem, setRentalItem] = useState([]);
 
   const { getTranslations } = useTranslations();
-
 
   const {
     query: { id },
@@ -120,49 +107,56 @@ export default function MediaControlCard() {
             <List sx={{ maxWidth: 360, bgcolor: "background.paper" }}>
               <ListItem alignItems="flex-start">
                 <React.Fragment>
-                  {imageFront && (
-                    <CardMedia
-                      className={classes.mainImg}
-                      component="img"
-                      alt="Apartment Front"
-                      image={imageFront.asset.url}
-                      
-                    />
-                  )}
+                  <CardMedia
+                    className={classes.mainImg}
+                    component="img"
+                    alt="Apartment Front"
+                    image={imageFront}
+                  />
                 </React.Fragment>
               </ListItem>
               <Divider variant="inset" component="li" />
-              <ListItem > 
+              <ListItem>
                 <React.Fragment>
-                <Button style={buttonstyle} onClick={handleOpen} variant="contained">Gallery</Button>
-                <Modal
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby="modal-modal-title"
-                  aria-describedby="modal-modal-description"
-                >
-                  <Box sx={style}>
-                  <Swiper  slidesPerView={1} spaceBetween={30} loop={true} pagination={{
-                    "clickable": true
-                  }} navigation={true} className="mySwiper">
-                    {images &&
-                      images.map(
-                      ({ image, description }, index) =>
-                        image && (
-                          <SwiperSlide>
-                          <CardMedia
-                            key={`rental-image=${index}`}
-                            className={classes.imgs}
-                            component="img"
-                            alt={description}
-                            image={image.asset.url}
-                          />
-                          </SwiperSlide>
-                        )
-                    )}   
-                    </Swiper>
-                  </Box>
-                </Modal>
+                  <Button
+                    style={buttonstyle}
+                    onClick={handleOpen}
+                    variant="contained"
+                  >
+                    Gallery
+                  </Button>
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                    <Box sx={style}>
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={true}
+                        className="mySwiper"
+                      >
+                        {images &&
+                          images.map(({ url, description }, index) => (
+                            <SwiperSlide>
+                              <CardMedia
+                                key={`rental-image=${index}`}
+                                className={classes.imgs}
+                                component="img"
+                                alt={description}
+                                image={url}
+                              />
+                            </SwiperSlide>
+                          ))}
+                      </Swiper>
+                    </Box>
+                  </Modal>
                 </React.Fragment>
               </ListItem>
               <Divider variant="inset" component="li" />
@@ -199,7 +193,7 @@ export default function MediaControlCard() {
                         <Bold>
                           {getTranslations("rentalDetailsPage.location")}
                         </Bold>
-                       <Text> {streetAddress}</Text>
+                        <Text> {streetAddress}</Text>
                       </Typography>
                     </React.Fragment>
                   }
@@ -219,7 +213,7 @@ export default function MediaControlCard() {
                         <Bold>
                           {getTranslations("rentalDetailsPage.price")}
                         </Bold>{" "}
-                       <Text>${price}</Text>
+                        <Text>${price}</Text>
                       </Typography>
                     </React.Fragment>
                   }
@@ -239,7 +233,7 @@ export default function MediaControlCard() {
                         <Bold>
                           {getTranslations("rentalDetailsPage.availability")}
                         </Bold>{" "}
-                       <Text>{availability}</Text> 
+                        <Text>{availability}</Text>
                       </Typography>
                     </React.Fragment>
                   }

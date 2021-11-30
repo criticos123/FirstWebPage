@@ -3,9 +3,7 @@ export const RENTALS = {
     _id,
     "apartmentName": apartmentName[$lang],
     streetAddress,
-    "image": {
-      "url": imageFront.asset-> url
-    },
+    "image": imageFront.asset-> url,
     price,
     availability
   }`,
@@ -13,9 +11,10 @@ export const RENTALS = {
     *[_type == 'rental' && ($id == _id)] {
       "apartmentName": apartmentName[$lang],
       streetAddress,
+      "imageFront": imageFront.asset-> url,
       "images": images[]{
         "url": image.asset->url,
-        "description": image.asset->description
+        "description": image.asset->description[$lang]
       },
       price,
       availability
