@@ -45,6 +45,7 @@ function sendEmail(e) {
     .then(
       (result) => {
         console.log(result.text);
+        window.location.reload();
       },
       (error) => {
         console.log(error.text);
