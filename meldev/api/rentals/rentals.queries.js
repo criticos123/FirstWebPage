@@ -1,28 +1,14 @@
-import { RENTALS } from "./rentals.gql";
-import { query } from "../../apollo";
-import { parseLocalizedStrings } from "../../utils/string";
+import { RENTALS } from "./rentals.groq";
+import client from "../sanity-client";
+import Router from "next/router";
 
 export async function getRentals() {
-  const {
-    data: { allRental },
-  } = await query({
-    query: RENTALS.ALL,
-  });
-
-  const parsedRentals = allRental.map(parseLocalizedStrings);
-
-  return parsedRentals;
+  return await client.fetch(RENTALS.ALL, { lang: Router.locale });
 }
 
 export async function getRentalItem(variables) {
-  const {
-    data: { Rental },
-  } = await query({
-    query: RENTALS.ITEM,
-    variables,
+  return await client.fetch(RENTALS.ITEM, {
+    lang: Router.locale,
+    ...variables,
   });
-
-  const parsedRental = parseLocalizedStrings(Rental);
-
-  return parsedRental;
 }

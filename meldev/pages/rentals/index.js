@@ -68,7 +68,7 @@ export default function Rentals() {
                 {
                   price,
                   apartmentName,
-                  imageFront,
+                  image,
                   streetAddress,
                   _id: id,
                   availability,
@@ -79,7 +79,7 @@ export default function Rentals() {
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
-                      image={imageFront && imageFront.asset.url}
+                      image={image}
                       alt="Apartment Front"
                     />
                     <CardContent className={classes.cardContent}>
@@ -91,10 +91,15 @@ export default function Rentals() {
                         {streetAddress}
                       </Typography>
                       <Typography>
-                        <span className={classes.bold}>{getTranslations("rentalDetailsPage.price")}</span> ${price}
+                        <span className={classes.bold}>
+                          {getTranslations("rentalDetailsPage.price")}
+                        </span>{" "}
+                        ${price}
                       </Typography>
                       <Typography>
-                        <span className={classes.bold}>{getTranslations("rentalDetailsPage.availability")}</span>{" "}
+                        <span className={classes.bold}>
+                          {getTranslations("rentalDetailsPage.availability")}
+                        </span>{" "}
                         {availability}
                       </Typography>
                     </CardContent>
