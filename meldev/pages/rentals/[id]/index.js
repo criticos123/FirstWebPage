@@ -144,9 +144,8 @@ export default function MediaControlCard() {
                       >
                         {images &&
                           images.map(({ url, description }, index) => (
-                            <SwiperSlide>
+                            <SwiperSlide key={`rental-image=${index}`}>
                               <CardMedia
-                                key={`rental-image=${index}`}
                                 className={classes.imgs}
                                 component="img"
                                 alt={description}
