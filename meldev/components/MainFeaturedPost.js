@@ -5,46 +5,40 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 
+import styled from "styled-components"
 import useTranslations from "../hooks/use-translations";
 
-const useStyles = makeStyles((theme) => ({
-  main: {
-    backgroundImage:
-      "url(https://images.dailyhive.com/20210512064924/montreal-apartments.jpg)",
-    height: "45vh",
-    backgroundPosition: "center",
-    backgroundPepeat: "no-repeat",
-    backgroundSize: "cover",
-    opacity: "0.9",
-    background: "rgba(33, 33, 33, .9)",
-  },
 
-  title: {
+const backgroundstyles={
+
+  height: '45vh',
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  backgroundImage:`linear-gradient(rgba(0.1,0.1,0.1,0.2), rgba(0.1,0.1,0.1,0.2)),url(https://cdn.tourcms.com/a/11676/821/1/default.jpg)`
+
+};
+
+const textstyles={
+
     color: "#fff",
     fontWeight: "bold",
-    textShadow: "black 10px 10px 10px ",
-  },
+    textShadow: "black 2px 2px 2px ",
 
-  text: {
-    color: "#fff",
-    fontWeight: "bold",
-    textShadow: "black 10px 10px 10px ",
-  },
-}));
+};
 
 export default function MainFeaturedPost() {
-  const classes = useStyles();
 
   const { getTranslations } = useTranslations();
 
   return (
     <Grid>
-      <Card sx={{ display: "flex" }} className={classes.main}>
+      <Card style={backgroundstyles} >
         <CardContent sx={{ flex: 2 }}>
-          <Typography className={classes.title} component="h2" variant="h4">
+          <Typography style={textstyles} component="h2" variant="h4">
             {getTranslations("homepage.header")}
           </Typography>
-          <Typography className={classes.text} variant="subtitle1" paragraph>
+          <Typography style={textstyles} variant="subtitle1" paragraph>
             {getTranslations("homepage.body")}
           </Typography>
         </CardContent>
