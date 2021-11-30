@@ -22,6 +22,7 @@
   "homepage": {
     "header": "Bienvenue chez Meldev Holdings,",
     "body": "Nous offrons un service de location de qualité à tous. N'hésitez pas à parcourir nos propriétés disponibles. Toutes nos propriétés sont situées dans la région du centre-ville près de l'université mcgill.",
+    "body2":"Tous nos appartements sont entièrement meublés avec Wifi inclus. Certains services sont en sus, veuillez nous contacter pour plus de détails. Notez que nos appartements n'acceptent pas les animaux et ne permettent pas de fumer à l'intérieur.",
     "cards": [
       {
         "title": "Parcourez nos locations actuellement disponibles",

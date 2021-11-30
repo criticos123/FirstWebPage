@@ -24,6 +24,7 @@ const textstyles={
     color: "#fff",
     fontWeight: "bold",
     textShadow: "black 2px 2px 2px ",
+    marginBottom:"10px",
 
 };
 
@@ -40,6 +41,9 @@ export default function MainFeaturedPost() {
           </Typography>
           <Typography style={textstyles} variant="subtitle1" paragraph>
             {getTranslations("homepage.body")}
+          </Typography>
+          <Typography style={textstyles} variant="subtitle1" paragraph>
+            {getTranslations("homepage.body2")}
           </Typography>
         </CardContent>
       </Card>
