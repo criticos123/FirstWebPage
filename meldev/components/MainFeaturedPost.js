@@ -15,8 +15,8 @@ const backgroundstyles={
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
-  backgroundImage:`linear-gradient(rgba(0.1,0.1,0.1,0.2), rgba(0.1,0.1,0.1,0.2)),url(https://cdn.tourcms.com/a/11676/821/1/default.jpg)`
-
+  backgroundImage:`linear-gradient(rgba(0.1,0.1,0.1,0.2), rgba(0.1,0.1,0.1,0.2)),url(https://cdn.tourcms.com/a/11676/821/1/default.jpg)`,
+  padding:"10px",
 };
 
 const textstyles={
