@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -53,10 +54,11 @@ export default function Rentals() {
   const [rentals, setRentals] = useState([]);
 
   const { getTranslations } = useTranslations();
+  const { locale } = useRouter();
 
   useEffect(() => {
     getRentals().then(setRentals);
-  }, []);
+  }, [locale]);
 
   return (
     <Seo translationKey="allRentals">

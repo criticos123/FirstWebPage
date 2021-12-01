@@ -77,13 +77,14 @@ export default function MediaControlCard() {
 
   const {
     query: { id },
+    locale,
   } = useRouter();
 
   useEffect(() => {
     if (id) {
       getRentalItem({ id }).then(setRentalItem);
     }
-  }, [id]);
+  }, [id, locale]);
 
   const {
     imageFront,
