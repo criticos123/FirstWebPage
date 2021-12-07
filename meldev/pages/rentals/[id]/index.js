@@ -189,7 +189,7 @@ export default function MediaControlCard() {
                     aria-describedby="modal-modal-description"
                   >
                     <Box sx={style}>
-                        <Youtube embedId="1znjHDiqBk8"/>
+                        <Youtube embedId={video}/>
                     </Box>
                   </Modal>
                 </React.Fragment>

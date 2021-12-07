@@ -39,6 +39,11 @@ export default {
       title: "Availability",
       type: "date",
     },
+    {
+      name: "video",
+      title: "Video",
+      type: "string",
+    },
   ],
   preview: {
     select: {
