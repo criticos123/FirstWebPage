@@ -59,12 +59,24 @@ const style = {
   width: 400,
   bgcolor: "background.paper",
   boxShadow: 24,
+  border:"none",
 };
 
 const buttonstyle = {
   width: "100%",
   bgcolor: "background.paper",
   boxShadow: 24,
+  margin:"10px",
+  fontWeight:"Bold",
+};
+
+const buttonstyle2 = {
+  width: "100%",
+  bgcolor: "background.paper",
+  boxShadow: 24,
+  margin:"10px",
+  fontWeight:"Bold",
+  backgroundColor:"#DC143C",
 };
 
 SwiperCore.use([Pagination, Navigation]);
@@ -97,8 +109,13 @@ export default function MediaControlCard() {
   } = rentalItem;
 
   const [open, setOpen] = React.useState(false);
+  const [open2, setOpen2] = React.useState(false);
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleOpen2 = () => setOpen2(true);
+  const handleClose2 = () => setOpen2(false);
 
   return (
     <Seo translationKey="rental">
@@ -124,7 +141,7 @@ export default function MediaControlCard() {
                     onClick={handleOpen}
                     variant="contained"
                   >
-                    Gallery
+                    PHOTOS
                   </Button>
                   <Modal
                     open={open}
@@ -155,6 +172,24 @@ export default function MediaControlCard() {
                             </SwiperSlide>
                           ))}
                       </Swiper>
+                    </Box>
+                  </Modal>
+                      <Button
+                    style={buttonstyle2}
+                    onClick={handleOpen2}
+                    variant="contained"
+                    color="secondary"
+                  >
+                    VIDEO
+                  </Button>
+                  <Modal
+                    open={open2}
+                    onClose={handleClose2}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                    <Box sx={style}>
+                        <Youtube embedId="cRU3LkIng8c"/>
                     </Box>
                   </Modal>
                 </React.Fragment>
