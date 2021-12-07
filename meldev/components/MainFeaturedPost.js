@@ -11,7 +11,7 @@ import useTranslations from "../hooks/use-translations";
 
 const backgroundstyles={
 
-  height: '60vh',
+  height: '67vh',
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
