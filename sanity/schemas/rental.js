@@ -35,15 +35,16 @@ export default {
       type: "number",
     },
     {
-      name: "availability",
-      title: "Availability",
-      type: "date",
-    },
-    {
       name: "video",
       title: "Video",
       type: "string",
     },
+    {
+      name: "availability",
+      title: "Availability",
+      type: "date",
+    },
+ 
   ],
   preview: {
     select: {
