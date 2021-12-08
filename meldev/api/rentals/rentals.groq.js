@@ -5,7 +5,9 @@ export const RENTALS = {
     streetAddress,
     "image": imageFront.asset-> url,
     price,
+    video,
     availability
+ 
   }`,
   ITEM: `
     *[_type == 'rental' && ($id == _id)] {
@@ -17,8 +19,9 @@ export const RENTALS = {
         "description": image.asset->description[$lang]
       },
       price,
+      video,
       availability,
-      video
+
       
     }[0]
   `,
