@@ -17,7 +17,9 @@ export const RENTALS = {
         "description": image.asset->description[$lang]
       },
       price,
-      availability
+      availability,
+      video
+      
     }[0]
   `,
 };

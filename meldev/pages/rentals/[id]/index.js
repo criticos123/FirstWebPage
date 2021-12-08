@@ -189,7 +189,7 @@ export default function MediaControlCard() {
                     aria-describedby="modal-modal-description"
                   >
                     <Box sx={style}>
-                        <Youtube embedId={video}/>
+                     <Youtube embedId={video}/>
                     </Box>
                   </Modal>
                 </React.Fragment>
@@ -208,7 +208,7 @@ export default function MediaControlCard() {
                         <Bold>
                           {getTranslations("rentalDetailsPage.bedroomNumber")}
                         </Bold>{" "}
-                        <Text>{apartmentName}</Text>
+                        <Text>{apartmentName} </Text>
                       </Typography>
                     </React.Fragment>
                   }
