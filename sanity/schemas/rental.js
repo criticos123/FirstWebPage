@@ -42,7 +42,7 @@ export default {
     {
       name: "availability",
       title: "Availability",
-      type: "date",
+      type: "string",
     },
  
   ],
