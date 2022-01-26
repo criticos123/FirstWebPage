@@ -174,7 +174,7 @@ export default function MediaControlCard() {
                       </Swiper>
                     </Box>
                   </Modal>
-                  /*
+                  
                      <Button
                    style={buttonstyle2}
                   onClick={handleOpen2}
@@ -193,7 +193,7 @@ export default function MediaControlCard() {
                       <Youtube embedId={video}/>
                      </Box>
                    </Modal>
-                  */
+                  
                 </React.Fragment>
               </ListItem>
               <Divider variant="inset" component="li" />
