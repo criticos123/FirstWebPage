@@ -174,24 +174,24 @@ export default function MediaControlCard() {
                       </Swiper>
                     </Box>
                   </Modal>
-                      <Button
-                    style={buttonstyle2}
-                    onClick={handleOpen2}
-                    variant="contained"
-                    color="secondary"
-                  >
-                    VIDEO
-                  </Button>
-                  <Modal
-                    open={open2}
-                    onClose={handleClose2}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                  >
-                    <Box sx={style}>
-                     <Youtube embedId={video}/>
-                    </Box>
-                  </Modal>
+//                       <Button
+//                     style={buttonstyle2}
+//                     onClick={handleOpen2}
+//                     variant="contained"
+//                     color="secondary"
+//                   >
+//                     VIDEO
+//                   </Button>
+//                   <Modal
+//                     open={open2}
+//                     onClose={handleClose2}
+//                     aria-labelledby="modal-modal-title"
+//                     aria-describedby="modal-modal-description"
+//                   >
+//                     <Box sx={style}>
+//                      <Youtube embedId={video}/>
+//                     </Box>
+//                   </Modal>
                 </React.Fragment>
               </ListItem>
               <Divider variant="inset" component="li" />
