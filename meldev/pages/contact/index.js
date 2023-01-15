@@ -38,7 +38,7 @@ function sendEmail(e) {
   emailjs
     .sendForm(
       "service_qkfoyxo",
-      "template_p2e1s99",
+      "template_ax4fffd",
       e.target,
       "user_TWAfyd56g18yKYV7rfwRH"
     )
